@@ -12,6 +12,7 @@ import datetime as dt
 import json
 import os
 import pathlib
+import re
 import sys
 
 from garminconnect import Garmin
@@ -19,7 +20,10 @@ from garminconnect import Garmin
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
 RAW = DATA / "raw"
+DETAILS = DATA / "details"
 ROUNDS_FILE = DATA / "rounds.json"
+CLUBS_FILE = DATA / "clubs.json"
+STATS_FILE = DATA / "stats.json"
 
 # Fields that identify you on Garmin. Dropped before anything is committed.
 PRIVATE_FIELDS = {"customerId", "playerProfileId"}
@@ -32,6 +36,33 @@ def login() -> Garmin:
     # login() accepts either a token-store path or the token JSON itself.
     client.login(tokens if tokens else "~/.garminconnect")
     return client
+
+
+# Keys dropped from the public detail files: anything that locates you on the
+# course or identifies your Garmin account.
+_PRIVATE_KEY = re.compile(
+    r"(lat|lon|lng|latitude|longitude|loc|pos)$|location|position|coordinate|gps|"
+    r"customer|profile|userid|displayname|fullname|email|username",
+    re.IGNORECASE,
+)
+
+
+def sanitize(obj):
+    """Recursively remove location and identity fields."""
+    if isinstance(obj, dict):
+        return {k: sanitize(v) for k, v in obj.items() if not _PRIVATE_KEY.search(k)}
+    if isinstance(obj, list):
+        return [sanitize(v) for v in obj]
+    return obj
+
+
+def save_if_changed(path: pathlib.Path, data) -> bool:
+    text = json.dumps(data, indent=2, sort_keys=True)
+    if path.exists() and path.read_text(encoding="utf-8") == text:
+        return False
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(text, encoding="utf-8")
+    return True
 
 
 def clean(row: dict) -> dict:
@@ -78,17 +109,32 @@ def main() -> int:
             sid not in existing
             or sid == newest_id
             or row.get("roundInProgress")
+            or not (DETAILS / f"{sid}.json").exists()
         )
         if not needs_detail:
             continue
 
+        detail = {}
         for name, fn in (("scorecard", client.get_golf_scorecard),
                          ("shots", client.get_golf_shot_data)):
             try:
-                save_json(RAW / f"{sid}_{name}.json", fn(sid))
+                raw = fn(sid)
+                save_json(RAW / f"{sid}_{name}.json", raw)  # git-ignored, full fidelity
+                detail[name] = sanitize(raw)
                 print(f"saved {sid} {name}")
             except Exception as exc:  # shot data is missing for some rounds
                 print(f"skipped {sid} {name}: {exc}")
+        if detail:
+            save_if_changed(DETAILS / f"{sid}.json", detail)
+
+    # Account-wide club distances and overall stats (best effort).
+    for path, fn, label in ((CLUBS_FILE, client.get_golf_club_stats, "clubs"),
+                            (STATS_FILE, client.get_golf_user_stats, "stats")):
+        try:
+            if save_if_changed(path, sanitize(fn())):
+                print(f"updated {label}")
+        except Exception as exc:
+            print(f"skipped {label}: {exc}")
 
     rounds = sorted(merged.values(), key=lambda r: r.get("startTime", ""))
     out = {
