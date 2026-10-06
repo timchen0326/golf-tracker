@@ -26,10 +26,10 @@ jobs:
         run: pip install --upgrade garminconnect curl_cffi
 
       - name: Fetch rounds from Garmin
-       env:
-         GARMIN_TOKENS: ${{ secrets.GARMIN_TOKENS }}
-         GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
-         GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
+        env:
+          GARMIN_TOKENS: ${{ secrets.GARMIN_TOKENS }}
+          GARMIN_EMAIL: ${{ secrets.GARMIN_EMAIL }}
+          GARMIN_PASSWORD: ${{ secrets.GARMIN_PASSWORD }}
         run: python fetch_golf.py
 
       - name: Commit changes
