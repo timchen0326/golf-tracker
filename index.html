@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<link rel="icon" href="data:,">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Golf rounds</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +19,9 @@
     --sand: #c49a3c;
     --brick: #8e3b3b;
     --focus: #1d5fd1;
+    --blue: #1f4f8f;
+    --purple: #7a5aa6;
+    --deep: #5a2020;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -30,6 +34,9 @@
       --sand: #d9b45a;
       --brick: #d27a7a;
       --focus: #7fb0ff;
+      --blue: #6aa0ea;
+      --purple: #b79ae0;
+      --deep: #b05a5a;
     }
   }
   * { box-sizing: border-box; }
@@ -83,7 +90,65 @@
     .mark.double { box-shadow: 0 0 0 1.5px var(--card), 0 0 0 3px currentColor; }
     .rounds button { grid-template-columns: 1fr auto; }
     .rounds .partial { grid-column: 1; grid-row: 2; }
+    .rrow { grid-template-columns: 3.4rem 1fr 2.8rem; gap: .4rem; }
+    .sg { grid-template-columns: 4.6rem 1fr 3rem; gap: .4rem; }
+    .club { grid-template-columns: 3.6rem 1fr 3rem; gap: .4rem; }
+    .axis { margin-left: 4rem; margin-right: 3.4rem; }
   }
+
+
+  /* Generic chart pieces */
+  .seg { display: flex; height: 1.6rem; border-radius: 3px; overflow: hidden; border: 1px solid var(--rule); }
+  .seg div { min-width: 2px; }
+  .legend { list-style: none; margin: .6rem 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: .3rem 1.1rem; font-size: .9rem; }
+  .legend li { display: flex; align-items: center; gap: .4rem; }
+  .legend b { font-weight: 600; }
+  .tools { display: flex; justify-content: flex-end; }
+  .unit { all: unset; cursor: pointer; font-size: .85rem; color: var(--muted); border: 1px solid var(--rule); border-radius: 3px; padding: .15rem .6rem; }
+  .unit:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  .unit b { color: var(--ink); }
+  .rrow { display: grid; grid-template-columns: 4.2rem 1fr 3.2rem; gap: .6rem; align-items: center; margin: .45rem 0; font-size: .85rem; }
+  .rrow .lbl { color: var(--muted); }
+  .rrow .val { text-align: right; font-weight: 600; }
+  .rrow .seg { height: 1.35rem; }
+  .cols { display: flex; align-items: flex-end; gap: .5rem; height: 9rem; border-bottom: 1px solid var(--rule); padding: 0 .25rem; }
+  .cols > div { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; height: 100%; font-size: .85rem; font-weight: 600; }
+  .cols .bar { width: 100%; background: var(--green); border-radius: 2px 2px 0 0; min-height: 2px; margin-top: .2rem; }
+  .collabels { display: flex; gap: .5rem; padding: .3rem .25rem 0; color: var(--muted); font-size: .85rem; }
+  .collabels span { flex: 1; text-align: center; }
+
+  /* Strokes gained */
+  .sg { display: grid; grid-template-columns: 5.6rem 1fr 3.4rem; gap: .6rem; align-items: center; margin: .5rem 0; font-size: .9rem; }
+  .sg .track { position: relative; height: 1.5rem; }
+  .sg .zero { position: absolute; left: 50%; top: -2px; bottom: -2px; width: 1.5px; background: var(--ink); }
+  .sg .you { position: absolute; top: 3px; bottom: 3px; border-radius: 2px; }
+  .sg .grp { position: absolute; top: 50%; width: .6rem; height: .6rem; transform: translate(-50%, -50%) rotate(45deg); border: 2px solid var(--ink); background: var(--card); }
+  .sg .val { text-align: right; font-weight: 600; }
+  .sg .na { color: var(--muted); font-size: .8rem; }
+
+  /* Clubs */
+  .axis { position: relative; height: 1.1rem; margin-left: 5.1rem; margin-right: 3.9rem; font-size: .75rem; color: var(--muted); }
+  .axis span { position: absolute; transform: translateX(-50%); }
+  .axis span:first-child { transform: none; }
+  .club { display: grid; grid-template-columns: 4.5rem 1fr 3.3rem; gap: .6rem; align-items: center; margin: .15rem 0; font-size: .9rem; }
+  .club-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .club-val { text-align: right; font-weight: 600; }
+  .club-track { position: relative; height: 1.9rem; background: repeating-linear-gradient(to right, var(--rule) 0, var(--rule) 1px, transparent 1px, transparent var(--step)); border-bottom: 1px solid var(--rule); }
+  .club-track .range { position: absolute; top: .65rem; height: .6rem; background: color-mix(in srgb, var(--green) 35%, transparent); border-radius: 3px; }
+  .club-track .dot { position: absolute; top: 50%; width: .55rem; height: .55rem; margin: -.275rem 0 0 -.275rem; border-radius: 50%; background: var(--green); border: 1.5px solid var(--card); }
+  .club-track .avg { position: absolute; top: .2rem; bottom: .2rem; width: 3px; margin-left: -1.5px; background: var(--ink); border-radius: 1px; }
+  .club-track .best { position: absolute; top: .45rem; bottom: .45rem; width: 0; margin-left: -1px; border-left: 2px dotted var(--ink); }
+  .key { color: var(--muted); font-size: .85rem; margin: .5rem 0 0; }
+  .key i { display: inline-block; vertical-align: middle; margin: 0 .25rem 0 .6rem; }
+  .key i.d { width: .55rem; height: .55rem; border-radius: 50%; background: var(--green); }
+  .key i.a { width: 3px; height: .9rem; background: var(--ink); }
+  .key i.r { width: 1.4rem; height: .5rem; background: color-mix(in srgb, var(--green) 35%, transparent); border-radius: 3px; }
+  .key i.m { height: .9rem; border-left: 2px dotted var(--ink); }
+  .tiles { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; padding: .85rem .5rem 0; font-weight: 600; }
+  .tiles span { color: var(--muted); font-weight: 400; margin-right: .35rem; }
+  .nine tr.extra td { font-size: clamp(.68rem, 2.2vw, .85rem); color: var(--muted); border-bottom: 0; padding: .15rem 0; }
+  .nine tr.extra td:first-child { font-weight: 600; }
+  .nine tr.extra td.sub { font-weight: 600; color: var(--ink); }
 
   /* Overview */
   dl.overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 1rem 1.5rem; margin: 0; }
@@ -140,25 +205,60 @@ const fmtDate = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, weekday: "short
 const fmtShort = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, month: "short", day: "numeric" });
 const fmtStamp = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 
-const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const sign = n => n === 0 ? "E" : n > 0 ? "+" + n : "\u2212" + Math.abs(n);
-const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
-const one = n => n == null ? "\u2014" : n.toFixed(1);
+// Garmin reports clubs only by numeric type. Fill in your bag here; unlisted
+// clubs show as "Club <number>" so nothing is hidden.
+const CLUB_NAMES = { 0: "Unassigned", 1: "Driver", 3: "3 Wood" };
+const clubName = t => CLUB_NAMES[t] || "Club " + t;
+const SHOT_NAMES = { TEE: "Tee shot", APPROACH: "Approach", CHIP: "Chip", RECOVERY: "Recovery", LAYUP: "Lay-up", PUTT: "Putt", UNKNOWN: "Other", DRIVE: "Drive", BUNKER: "Bunker" };
 
-function normalise(r) {
+let unit = "m"; // "m" or "yd"
+const dist = m => unit === "yd" ? m * 1.09361 : m;
+const fmtDist = m => Math.round(dist(m)) + " " + unit;
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const sign = n => n === 0 ? "E" : n > 0 ? "+" + n : "−" + Math.abs(n);
+const sgn = (n, d = 2) => (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n).toFixed(d);
+const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
+const sum = a => a.reduce((x, y) => x + y, 0);
+const one = n => n == null ? "—" : n.toFixed(1);
+const pct = (n, d) => d ? Math.round(n / d * 100) + "%" : "—";
+
+function parseDetail(det) {
+  if (!det) return {};
+  const sd = det.scorecard && det.scorecard.scorecardDetails && det.scorecard.scorecardDetails[0];
+  const sc = sd && sd.scorecard;
+  const clubType = {};
+  ((det.shots && det.shots.clubDetails) || []).forEach(c => { clubType[c.id] = c.clubTypeId; });
+  const shots = ((det.shots && det.shots.holeShots) || []).flatMap(h => h.shots || [])
+    .filter(x => x.meters > 0 && !x.excludeFromStats)
+    .map(x => ({ hole: x.holeNumber, order: x.shotOrder, meters: x.meters, type: x.shotType, club: clubType[x.clubId] ?? 0 }));
+  return {
+    holes: (sc && sc.holes) || [],
+    stats: sd && sd.scorecardStats && sd.scorecardStats.round,
+    shots, walked: sc && sc.distanceWalked, longest: sd && sd.longestShotInMeters
+  };
+}
+
+function normalise(r, det) {
+  const d = parseDetail(det);
   const pars = String(r.holePars || "").split("").map(Number);
-  const holes = (r.holes || []).map((h, i) => ({
-    n: h.number ?? i + 1,
-    par: pars[i],
-    strokes: h.strokes > 0 ? h.strokes : null
-  }));
+  const holes = (r.holes || []).map((h, i) => {
+    const n = h.number ?? i + 1;
+    const x = d.holes.find(q => q.number === n) || {};
+    return {
+      n, par: pars[i], strokes: h.strokes > 0 ? h.strokes : null,
+      putts: x.putts ?? null, penalties: x.penalties ?? null, fw: x.fairwayShotOutcome || null
+    };
+  });
   const played = holes.filter(h => h.strokes != null && Number.isFinite(h.par));
-  const strokes = played.reduce((a, h) => a + h.strokes, 0);
-  const par = played.reduce((a, h) => a + h.par, 0);
+  const strokes = sum(played.map(h => h.strokes));
+  const par = sum(played.map(h => h.par));
   return {
     id: r.id, course: r.courseName || "Unknown course", start: new Date(r.startTime),
     holes, played, strokes, par, toPar: strokes - par,
-    full: played.length === 18, inProgress: !!r.roundInProgress
+    full: played.length === 18, inProgress: !!r.roundInProgress,
+    stats: d.stats || null, shots: d.shots || [], walked: d.walked, longest: d.longest,
+    hasDetail: !!det
   };
 }
 
@@ -169,30 +269,47 @@ function markClass(strokes, par) {
   return shape + (Math.abs(d) >= 2 ? " double" : "");
 }
 
-function nineTable(holes, label, offset) {
+const FW = { HIT: ["✓", "fairway hit"], LEFT: ["L", "missed left"], RIGHT: ["R", "missed right"] };
+
+function nineTable(holes, label) {
   if (!holes.length) return "";
   const head = holes.map(h => `<th scope="col">${h.n}</th>`).join("");
   const pars = holes.map(h => `<td>${Number.isFinite(h.par) ? h.par : ""}</td>`).join("");
   const scores = holes.map(h => {
-    if (h.strokes == null) return `<td class="skipped" aria-label="not played">\u2013</td>`;
+    if (h.strokes == null) return `<td class="skipped" aria-label="not played">–</td>`;
     const cls = Number.isFinite(h.par) ? markClass(h.strokes, h.par) : "";
     return `<td><span class="mark ${cls}">${h.strokes}</span></td>`;
   }).join("");
   const p = holes.filter(h => h.strokes != null && Number.isFinite(h.par));
-  const sPar = p.reduce((a, h) => a + h.par, 0);
-  const sStr = p.reduce((a, h) => a + h.strokes, 0);
+  const sPar = sum(p.map(h => h.par));
+  const sStr = sum(p.map(h => h.strokes));
+  const hasPutts = holes.some(h => h.putts != null);
+  const hasFw = holes.some(h => h.fw);
+  const putts = hasPutts ? `<tr class="extra"><td>Putts</td>${holes.map(h => `<td>${h.strokes != null && h.putts != null ? h.putts : ""}</td>`).join("")}<td class="sub">${sum(holes.map(h => h.putts || 0))}</td></tr>` : "";
+  const fw = hasFw ? `<tr class="extra"><td>Fwy</td>${holes.map(h => h.fw && FW[h.fw] ? `<td aria-label="${FW[h.fw][1]}">${FW[h.fw][0]}</td>` : "<td></td>").join("")}<td class="sub">${holes.filter(h => h.fw === "HIT").length}/${holes.filter(h => h.fw).length}</td></tr>` : "";
   return `
   <table class="nine">
     <thead><tr><th scope="col">Hole</th>${head}<th scope="col" class="sub">${label}</th></tr></thead>
     <tbody>
       <tr><td>Par</td>${pars}<td class="sub">${sPar || ""}</td></tr>
       <tr class="score"><td>Score</td>${scores}<td class="sub">${p.length ? sStr : ""}</td></tr>
+      ${putts}${fw}
     </tbody>
   </table>`;
 }
 
 function scorecard(r) {
   const front = r.holes.slice(0, 9), back = r.holes.slice(9, 18);
+  const s = r.stats;
+  const tiles = [["Total", r.strokes], ["To par", sign(r.toPar)], ["Holes", r.played.length]];
+  if (s) {
+    tiles.push(["Putts", s.putts], ["Fairways", `${s.fairwaysHit}/${s.fairwaysRecorded}`],
+      ["GIR", `${s.greensInRegulation}/${s.greensRecorded}`], ["Chips", s.chips]);
+    const pen = sum(r.holes.map(h => h.penalties || 0));
+    if (pen) tiles.push(["Penalties", pen]);
+  }
+  if (r.walked) tiles.push(["Walked", unit === "yd" ? (r.walked / 1609.34).toFixed(1) + " mi" : (r.walked / 1000).toFixed(1) + " km"]);
+  if (r.longest) tiles.push(["Longest shot", fmtDist(r.longest)]);
   return `
   <div class="sc-head">
     <div class="sc-course">${esc(r.course)}</div>
@@ -201,25 +318,30 @@ function scorecard(r) {
   <div class="card">
     ${nineTable(front, "Out")}
     ${nineTable(back, "In")}
-    <div class="sc-total">
-      <div><span>Total</span>${r.strokes}</div>
-      <div><span>To par</span>${sign(r.toPar)}</div>
-      <div><span>Holes</span>${r.played.length}</div>
-    </div>
+    <div class="tiles">${tiles.map(([k, v]) => `<div><span>${k}</span>${v}</div>`).join("")}</div>
   </div>
-  <p class="legend-marks">Circle: under par. Square: over par. Double outline: two or more away from par.</p>`;
+  <p class="legend-marks">Circle: under par. Square: over par. Double outline: two or more away from par. Fwy: ✓ hit, L/R missed left/right.</p>`;
 }
 
-function overview(rounds) {
+function overview(rounds, stats) {
   const fulls = rounds.filter(r => r.full);
   const best = fulls.length ? Math.min(...fulls.map(r => r.strokes)) : null;
-  const holes = rounds.reduce((a, r) => a + r.played.length, 0);
+  const holes = sum(rounds.map(r => r.played.length));
   const items = [
     ["Rounds", rounds.length],
     ["Holes played", holes],
-    ["Best 18 holes", best ?? "\u2014"],
+    ["Best 18 holes", best ?? "—"],
     ["Average 18 holes", one(avg(fulls.map(r => r.strokes)))]
   ];
+  if (stats) {
+    const rs = stats.roundStat || {};
+    if (stats.handicap != null) items.push(["Handicap", stats.handicap.toFixed(1)]);
+    if (rs.puttsPerHole != null) items.push(["Putts per hole", rs.puttsPerHole.toFixed(2)]);
+    if (rs.percentFairwayHit != null) items.push(["Fairways hit", Math.round(rs.percentFairwayHit) + "%"]);
+    if (rs.percentGir != null) items.push(["Greens in regulation", Math.round(rs.percentGir) + "%"]);
+    if (stats.penaltiesPerRound != null) items.push(["Penalties per round", stats.penaltiesPerRound.toFixed(1)]);
+    if (stats.bunkersPerRound != null) items.push(["Bunkers per round", stats.bunkersPerRound.toFixed(1)]);
+  }
   return `<dl class="overview">${items.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
 }
 
@@ -252,22 +374,145 @@ function trendChart(rounds) {
   <p class="note">Score to par for each round. Hollow dots are rounds with fewer than 18 holes, measured over the holes played.</p>`;
 }
 
+const BUCKETS = [
+  ["Eagle or better", d => d <= -2, "var(--blue)"],
+  ["Birdie", d => d === -1, "var(--green)"],
+  ["Par", d => d === 0, "var(--muted)"],
+  ["Bogey", d => d === 1, "var(--sand)"],
+  ["Double bogey", d => d === 2, "var(--brick)"],
+  ["Triple or worse", d => d >= 3, "var(--deep)"]
+];
+
+function segBar(items, label) {
+  const total = sum(items.map(i => i.v));
+  if (!total) return "";
+  const bar = items.map(i => i.v ? `<div style="flex:${i.v};background:${i.c}" title="${esc(i.k)}: ${i.v}"></div>` : "").join("");
+  return `<div class="seg" role="img" aria-label="${esc(label)}">${bar}</div>`;
+}
+const legend = items => `<ul class="legend">${items.map(i => `<li><span class="swatch" style="background:${i.c}"></span>${esc(i.k)} <b>${i.v}${i.extra || ""}</b></li>`).join("")}</ul>`;
+
 function distribution(rounds) {
-  const buckets = [
-    ["Eagle or better", d => d <= -2, "#1f4f8f"],
-    ["Birdie", d => d === -1, "var(--green)"],
-    ["Par", d => d === 0, "var(--muted)"],
-    ["Bogey", d => d === 1, "var(--sand)"],
-    ["Double bogey", d => d === 2, "var(--brick)"],
-    ["Triple or worse", d => d >= 3, "#5a2020"]
-  ];
   const diffs = rounds.flatMap(r => r.played.map(h => h.strokes - h.par));
   if (!diffs.length) return "";
-  const counts = buckets.map(([, f]) => diffs.filter(f).length);
-  const bar = buckets.map(([name, , c], i) => counts[i] ? `<div style="flex:${counts[i]};background:${c}" title="${name}: ${counts[i]}"></div>` : "").join("");
-  const legend = buckets.map(([name, , c], i) =>
-    `<li><span class="swatch" style="background:${c}"></span>${name}<b>${counts[i]} (${Math.round(counts[i] / diffs.length * 100)}%)</b></li>`).join("");
-  return `<div class="dist" role="img" aria-label="Share of holes by result">${bar}</div><ul class="dist-legend">${legend}</ul>`;
+  const items = BUCKETS.map(([k, f, c]) => ({ k, c, v: diffs.filter(f).length }));
+  items.forEach(i => { i.extra = ` (${Math.round(i.v / diffs.length * 100)}%)`; });
+  return `<div class="dist" role="img" aria-label="Share of holes by result">${items.map(i => i.v ? `<div style="flex:${i.v};background:${i.c}" title="${i.k}: ${i.v}"></div>` : "").join("")}</div>${legend(items)}`;
+}
+
+function perRound(rounds) {
+  const rows = [...rounds].reverse().map(r => {
+    const diffs = r.played.map(h => h.strokes - h.par);
+    const items = BUCKETS.map(([k, f, c]) => ({ k, c, v: diffs.filter(f).length }));
+    return `<div class="rrow"><span class="lbl">${fmtShort.format(r.start)}</span>${segBar(items, "Results by hole on " + fmtShort.format(r.start))}<span class="val">${sign(r.toPar)}</span></div>`;
+  }).join("");
+  const key = BUCKETS.map(([k, , c]) => ({ k, c, v: "" }));
+  return rows + `<ul class="legend">${key.map(i => `<li><span class="swatch" style="background:${i.c}"></span>${i.k}</li>`).join("")}</ul>`;
+}
+
+function fairways(rounds, stats) {
+  const hs = rounds.flatMap(r => r.holes).filter(h => h.fw && FW[h.fw]);
+  if (!hs.length) return "";
+  const c = k => hs.filter(h => h.fw === k).length;
+  const items = [{ k: "Hit", c: "var(--green)", v: c("HIT") }, { k: "Missed left", c: "var(--blue)", v: c("LEFT") }, { k: "Missed right", c: "var(--purple)", v: c("RIGHT") }];
+  items.forEach(i => { i.extra = ` (${pct(i.v, hs.length)})`; });
+  const perDrive = [...rounds].reverse().filter(r => r.holes.some(h => h.fw)).map(r => {
+    const h = r.holes.filter(x => x.fw && FW[x.fw]);
+    const it = [{ k: "Hit", c: "var(--green)", v: h.filter(x => x.fw === "HIT").length }, { k: "Left", c: "var(--blue)", v: h.filter(x => x.fw === "LEFT").length }, { k: "Right", c: "var(--purple)", v: h.filter(x => x.fw === "RIGHT").length }];
+    return `<div class="rrow"><span class="lbl">${fmtShort.format(r.start)}</span>${segBar(it, "Fairways on " + fmtShort.format(r.start))}<span class="val">${it[0].v}/${h.length}</span></div>`;
+  }).join("");
+  return `${segBar(items, "Fairway results")}${legend(items)}<div style="margin-top:1rem">${perDrive}</div>
+  <p class="note">Par 3s are not counted. Misses are recorded relative to the target line.</p>`;
+}
+
+function putting(rounds) {
+  const hs = rounds.flatMap(r => r.holes).filter(h => h.strokes != null && h.putts != null);
+  if (!hs.length) return "";
+  const buckets = [0, 1, 2, 3, 4].map(n => hs.filter(h => n === 4 ? h.putts >= 4 : h.putts === n).length);
+  const max = Math.max(...buckets);
+  const cols = buckets.map((n, i) => `<div><span>${n}</span><div class="bar" style="height:${Math.max(2, n / max * 78)}%;background:${i >= 3 ? "var(--brick)" : i === 2 ? "var(--sand)" : "var(--green)"}" title="${n} holes"></div></div>`).join("");
+  const labels = ["0", "1", "2", "3", "4+"].map(t => `<span>${t}</span>`).join("");
+  const perRoundPutts = [...rounds].reverse().filter(r => r.stats).map(r => `<tr><td>${fmtShort.format(r.start)}</td><td>${r.stats.putts}</td><td>${(r.stats.putts / r.played.length).toFixed(2)}</td><td>${r.stats.upsAndDowns ?? "—"}</td></tr>`).join("");
+  return `<div class="cols" role="img" aria-label="Holes by number of putts">${cols}</div><div class="collabels">${labels}</div>
+  <p class="note">Number of holes by putts taken (${hs.length} holes). Average ${avg(hs.map(h => h.putts)).toFixed(2)} putts per hole.</p>
+  <div class="scroll"><table class="data"><thead><tr><th>Round</th><th>Putts</th><th>Per hole</th><th>Up-and-downs</th></tr></thead><tbody>${perRoundPutts}</tbody></table></div>`;
+}
+
+function strokesGained(stats) {
+  const rows = (stats && stats.strokesGainedRatings || []).filter(x => x.playerStrokesGained != null || x.groupStrokesGained != null);
+  if (!rows.length) return "";
+  const max = Math.max(0.5, ...rows.flatMap(x => [Math.abs(x.playerStrokesGained || 0), Math.abs(x.groupStrokesGained || 0)]));
+  const pos = v => 50 + v / max * 48;
+  const body = rows.map(x => {
+    const p = x.playerStrokesGained, g = x.groupStrokesGained;
+    const name = SHOT_NAMES[x.statShotType] || x.statShotType;
+    const bar = p == null ? `<span class="na" style="position:absolute;left:58%;top:.15rem">no data yet</span>`
+      : `<span class="you" style="left:${Math.min(50, pos(p))}%;width:${Math.abs(pos(p) - 50)}%;background:${p >= 0 ? "var(--green)" : "var(--brick)"}"></span>`;
+    const grp = g == null ? "" : `<span class="grp" style="left:${pos(g)}%" title="Group average ${sgn(g)}"></span>`;
+    return `<div class="sg"><span>${name}</span><div class="track"><span class="zero"></span>${bar}${grp}</div><span class="val">${p == null ? "" : sgn(p)}</span></div>`;
+  }).join("");
+  return `${body}<p class="note">Strokes gained per round against Garmin's baseline. Bars to the right of the line (green) are better than the baseline, bars to the left (red) are worse. The diamond is the average of other Garmin golfers.</p>`;
+}
+
+function clubChart(rounds, clubs) {
+  const byType = new Map();
+  (clubs || []).forEach(c => {
+    if (!c.clubStats || !c.clubStats.shotsCount) return;
+    byType.set(c.clubTypeId, { type: c.clubTypeId, st: c.clubStats, shots: [] });
+  });
+  rounds.flatMap(r => r.shots).forEach(s => {
+    if (s.type === "PUTT" || s.club === 0) return;
+    if (!byType.has(s.club)) byType.set(s.club, { type: s.club, st: null, shots: [] });
+    byType.get(s.club).shots.push(s.meters);
+  });
+  const rows = [...byType.values()].filter(r => r.st || r.shots.length).map(r => ({
+    ...r, mean: r.st ? r.st.averageDistance : avg(r.shots)
+  })).sort((a, b) => b.mean - a.mean);
+  if (!rows.length) return "";
+  const top = Math.max(...rows.flatMap(r => [...r.shots, r.st ? r.st.maxLifetimeDistance : 0]));
+  const step = unit === "yd" ? 50 : 50;
+  const maxM = Math.ceil(dist(top) / step) * step / (unit === "yd" ? 1.09361 : 1);
+  const pctOf = m => (m / maxM * 100);
+  const stepPct = (step / dist(maxM)) * 100;
+  const ticks = []; for (let v = 0; v <= dist(maxM) + 0.1; v += step) ticks.push(v);
+  const axis = `<div class="axis">${ticks.map(v => `<span style="left:${v / dist(maxM) * 100}%">${v}</span>`).join("")}</div>`;
+  const body = rows.map(r => {
+    const st = r.st;
+    const range = st && st.minimumRecentDistance != null ? `<span class="range" style="left:${pctOf(st.minimumRecentDistance)}%;width:${pctOf(st.maximumRecentDistance - st.minimumRecentDistance)}%"></span>` : "";
+    const dots = r.shots.map(m => `<span class="dot" style="left:${pctOf(m)}%" title="${fmtDist(m)}"></span>`).join("");
+    const best = st && st.maxLifetimeDistance ? `<span class="best" style="left:${pctOf(st.maxLifetimeDistance)}%" title="Longest ${fmtDist(st.maxLifetimeDistance)}"></span>` : "";
+    const a = `<span class="avg" style="left:${pctOf(r.mean)}%"></span>`;
+    const n = st ? st.shotsCount : r.shots.length;
+    return `<div class="club"><span class="club-name" title="${esc(clubName(r.type))}, ${n} shots">${esc(clubName(r.type))}</span><div class="club-track" style="--step:${stepPct}%">${range}${best}${dots}${a}</div><span class="club-val">${fmtDist(r.mean)}</span></div>`;
+  }).join("");
+  return `${axis}${body}<p class="key"><i class="d"></i>Each shot<i class="a"></i>Average<i class="r"></i>Recent range<i class="m"></i>Longest ever</p>
+  <p class="note">Distance in ${unit === "yd" ? "yards" : "metres"}. Clubs are listed longest to shortest by average. Names come from <code>CLUB_NAMES</code> in the page source.</p>`;
+}
+
+function greenMiss(clubs) {
+  const rows = (clubs || []).filter(c => c.clubStats && c.clubStats.percentGreenHit != null).sort((a, b) => b.clubStats.averageDistance - a.clubStats.averageDistance);
+  if (!rows.length) return "";
+  const parts = [["Hit", "percentGreenHit", "var(--green)"], ["Short", "percentGreenMissShort", "var(--sand)"], ["Long", "percentGreenMissLong", "var(--brick)"], ["Left", "percentGreenMissLeft", "var(--blue)"], ["Right", "percentGreenMissRight", "var(--purple)"]];
+  const body = rows.map(c => {
+    const it = parts.map(([k, f, col]) => ({ k, c: col, v: c.clubStats[f] || 0 }));
+    return `<div class="rrow" style="grid-template-columns:4.5rem 1fr 3.2rem"><span class="lbl">${esc(clubName(c.clubTypeId))}</span>${segBar(it, "Green results with " + clubName(c.clubTypeId))}<span class="val">${Math.round(c.clubStats.percentGreenHit)}%</span></div>`;
+  }).join("");
+  return body + `<ul class="legend">${parts.map(([k, , c]) => `<li><span class="swatch" style="background:${c}"></span>${k}</li>`).join("")}</ul>
+  <p class="note">Where approach shots ended up, per club. The number on the right is the share that hit the green. Small samples, so treat as rough.</p>`;
+}
+
+function shotTypes(rounds) {
+  const shots = rounds.flatMap(r => r.shots);
+  if (!shots.length) return "";
+  const types = Object.keys(SHOT_NAMES).filter(k => shots.some(s => s.type === k));
+  const colors = { TEE: "var(--green)", APPROACH: "var(--blue)", CHIP: "var(--sand)", RECOVERY: "var(--brick)", LAYUP: "var(--purple)", PUTT: "var(--ink)", UNKNOWN: "var(--muted)" };
+  const items = types.map(k => ({ k: SHOT_NAMES[k], c: colors[k], v: shots.filter(s => s.type === k).length }));
+  const rows = types.map(k => {
+    const m = shots.filter(s => s.type === k).map(s => s.meters);
+    return `<tr><td>${SHOT_NAMES[k]}</td><td>${m.length}</td><td>${fmtDist(avg(m))}</td><td>${fmtDist(Math.max(...m))}</td></tr>`;
+  }).join("");
+  return `${segBar(items, "Shots by type")}${legend(items)}
+  <div class="scroll"><table class="data"><thead><tr><th>Shot type</th><th>Shots</th><th>Average</th><th>Longest</th></tr></thead><tbody>${rows}</tbody></table></div>
+  <p class="note">Shot types are detected by your watch and some are left unclassified. Putts are not tracked as shots.</p>`;
 }
 
 function parTable(rounds) {
@@ -277,10 +522,20 @@ function parTable(rounds) {
     if (!h.length) return "";
     const a = avg(h.map(x => x.strokes));
     const d = +(a - p).toFixed(2);
-    return `<tr><td>Par ${p}</td><td>${h.length}</td><td>${a.toFixed(2)}</td><td>${sign(d)}</td></tr>`;
+    const g = h.filter(x => x.putts != null);
+    return `<tr><td>Par ${p}</td><td>${h.length}</td><td>${a.toFixed(2)}</td><td>${sign(d)}</td><td>${g.length ? avg(g.map(x => x.putts)).toFixed(2) : "—"}</td></tr>`;
   }).join("");
   if (!rows) return "";
-  return `<div class="scroll"><table class="data"><thead><tr><th>Hole type</th><th>Holes</th><th>Average score</th><th>Average to par</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  return `<div class="scroll"><table class="data"><thead><tr><th>Hole type</th><th>Holes</th><th>Average score</th><th>Average to par</th><th>Putts</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function roundTable(rounds) {
+  const rows = [...rounds].reverse().filter(r => r.stats).map(r => {
+    const s = r.stats, pen = sum(r.holes.map(h => h.penalties || 0));
+    return `<tr><td>${fmtShort.format(r.start)}</td><td>${r.strokes}</td><td>${s.putts}</td><td>${s.fairwaysHit}/${s.fairwaysRecorded}</td><td>${s.greensInRegulation}/${s.greensRecorded}</td><td>${s.chips}</td><td>${pen}</td></tr>`;
+  }).join("");
+  if (!rows) return "";
+  return `<div class="scroll"><table class="data"><thead><tr><th>Round</th><th>Score</th><th>Putts</th><th>Fairways</th><th>GIR</th><th>Chips</th><th>Pen.</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 function courseTable(rounds) {
@@ -288,9 +543,9 @@ function courseTable(rounds) {
   rounds.forEach(r => { if (!by.has(r.course)) by.set(r.course, []); by.get(r.course).push(r); });
   const rows = [...by.entries()].sort((a, b) => b[1].length - a[1].length).map(([name, rs]) => {
     const fulls = rs.filter(r => r.full);
-    const best = fulls.length ? Math.min(...fulls.map(r => r.strokes)) : "\u2014";
+    const best = fulls.length ? Math.min(...fulls.map(r => r.strokes)) : "—";
     const a = avg(fulls.map(r => r.toPar));
-    return `<tr><td>${esc(name)}</td><td>${rs.length}</td><td>${best}</td><td>${a == null ? "\u2014" : (a > 0 ? "+" : a < 0 ? "\u2212" : "") + Math.abs(a).toFixed(1)}</td></tr>`;
+    return `<tr><td>${esc(name)}</td><td>${rs.length}</td><td>${best}</td><td>${a == null ? "—" : (a > 0 ? "+" : a < 0 ? "−" : "") + Math.abs(a).toFixed(1)}</td></tr>`;
   }).join("");
   return `<div class="scroll"><table class="data"><thead><tr><th>Course</th><th>Rounds</th><th>Best 18</th><th>Average to par</th></tr></thead><tbody>${rows}</tbody></table></div>
   <p class="note">Best and average only count rounds with all 18 holes.</p>`;
@@ -306,10 +561,12 @@ function roundsList(rounds, selectedId) {
   return `<ul class="rounds">${items}</ul>`;
 }
 
+const section = (title, html) => html ? `<section><h2>${title}</h2>${html}</section>` : "";
+
 function render(data) {
   const app = document.getElementById("app");
-  const rounds = (data.rounds || []).map(normalise).filter(r => r.played.length > 0)
-    .sort((a, b) => a.start - b.start);
+  const rounds = (data.rounds || []).map(r => normalise(r, data.details && data.details[r.id]))
+    .filter(r => r.played.length > 0).sort((a, b) => a.start - b.start);
   document.getElementById("updated").textContent = data.updated
     ? "Updated " + fmtStamp.format(new Date(data.updated)) : "";
 
@@ -322,13 +579,23 @@ function render(data) {
   const draw = () => {
     const r = rounds.find(x => x.id === selected);
     app.innerHTML = `
+      <div class="tools"><button type="button" class="unit" id="unit" aria-label="Switch units">Units: <b>${unit === "yd" ? "yards" : "metres"}</b></button></div>
       <div id="card">${scorecard(r)}</div>
-      <section><h2>Overview</h2>${overview(rounds)}</section>
-      <section><h2>Score trend</h2>${trendChart(rounds)}</section>
-      <section><h2>Results by hole</h2>${distribution(rounds)}</section>
-      <section><h2>Scoring by hole type</h2>${parTable(rounds)}</section>
-      <section><h2>Courses</h2>${courseTable(rounds)}</section>
-      <section><h2>All rounds</h2>${roundsList(rounds, selected)}</section>`;
+      ${section("Overview", overview(rounds, data.stats))}
+      ${section("Score trend", trendChart(rounds))}
+      ${section("Results by round", perRound(rounds))}
+      ${section("Results by hole", distribution(rounds))}
+      ${section("Driving accuracy", fairways(rounds, data.stats))}
+      ${section("Putting", putting(rounds))}
+      ${section("Strokes gained", strokesGained(data.stats))}
+      ${section("Distance by club", clubChart(rounds, data.clubs))}
+      ${section("Approach results by club", greenMiss(data.clubs))}
+      ${section("Shots by type", shotTypes(rounds))}
+      ${section("Scoring by hole type", parTable(rounds))}
+      ${section("Round stats", roundTable(rounds))}
+      ${section("Courses", courseTable(rounds))}
+      ${section("All rounds", roundsList(rounds, selected))}`;
+    document.getElementById("unit").addEventListener("click", () => { unit = unit === "m" ? "yd" : "m"; draw(); });
     app.querySelectorAll(".rounds button").forEach(b => b.addEventListener("click", () => {
       selected = Number(b.dataset.id) || b.dataset.id;
       draw();
@@ -338,10 +605,19 @@ function render(data) {
   draw();
 }
 
-fetch("data/rounds.json", { cache: "no-store" })
-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
-  .then(render)
-  .catch(() => render({ rounds: [] }));
+const getJson = url => fetch(url, { cache: "no-store" }).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); });
+
+getJson("data/rounds.json").then(async data => {
+  const [stats, clubs, ...dets] = await Promise.allSettled([
+    getJson("data/stats.json"), getJson("data/clubs.json"),
+    ...(data.rounds || []).map(r => getJson(`data/details/${r.id}.json`))
+  ]);
+  data.stats = stats.status === "fulfilled" ? stats.value : null;
+  data.clubs = clubs.status === "fulfilled" ? clubs.value : null;
+  data.details = {};
+  (data.rounds || []).forEach((r, i) => { if (dets[i].status === "fulfilled") data.details[r.id] = dets[i].value; });
+  render(data);
+}).catch(() => render({ rounds: [] }));
 </script>
 </body>
 </html>
