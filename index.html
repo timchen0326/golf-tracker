@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golf rounds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #edf0ea;
+    --card: #f8f9f6;
+    --ink: #1e2a33;
+    --muted: #5d6b73;
+    --rule: #c7cec4;
+    --green: #2e6b4e;
+    --sand: #c49a3c;
+    --brick: #8e3b3b;
+    --focus: #1d5fd1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #151b1f;
+      --card: #1c2429;
+      --ink: #e7ece6;
+      --muted: #97a5ab;
+      --rule: #34414a;
+      --green: #5fb88d;
+      --sand: #d9b45a;
+      --brick: #d27a7a;
+      --focus: #7fb0ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--paper); }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background: var(--paper);
+    font-family: "Archivo", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+  }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+  main { max-width: 56rem; margin: 0 auto; padding: 1.25rem 1rem 4rem; }
+  h1, h2, h3 { font-stretch: 112%; line-height: 1.15; margin: 0; }
+  h1 { font-size: 1.1rem; font-weight: 700; }
+  h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: .75rem; }
+  section { margin-top: 3rem; }
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .updated { color: var(--muted); font-size: .85rem; }
+
+  /* Scorecard */
+  .sc-head { margin: 1.25rem 0 .75rem; }
+  .sc-course { font-size: clamp(1.6rem, 5vw, 2.4rem); font-weight: 800; font-stretch: 118%; line-height: 1.05; }
+  .sc-meta { color: var(--muted); margin-top: .35rem; }
+  .card { background: var(--card); border: 1px solid var(--rule); border-radius: 4px; padding: .75rem .5rem 1rem; }
+  .nine { width: 100%; border-collapse: collapse; table-layout: fixed; text-align: center; }
+  .nine + .nine { margin-top: 1rem; }
+  .nine th, .nine td { padding: .3rem 0; border-bottom: 1px solid var(--rule); font-size: clamp(.8rem, 2.6vw, 1rem); }
+  .nine th { font-weight: 600; color: var(--muted); }
+  .nine th:first-child, .nine td:first-child { width: 4.2rem; text-align: left; padding-left: .5rem; color: var(--muted); font-weight: 600; }
+  .nine .sub { font-weight: 700; border-left: 1px solid var(--rule); width: 3.2rem; }
+  .nine tr.score td { border-bottom: 0; padding-top: .45rem; }
+  .nine tr.score td:not(:first-child) { color: var(--ink); font-weight: 700; }
+  .nine tr.score td.skipped { color: var(--muted); font-weight: 400; }
+  .mark { display: inline-grid; place-items: center; min-width: 1.9em; height: 1.9em; }
+  .mark.under { border: 1.5px solid currentColor; border-radius: 50%; }
+  .mark.over  { border: 1.5px solid currentColor; border-radius: 1px; }
+  .mark.double { box-shadow: 0 0 0 2.5px var(--card), 0 0 0 4px currentColor; }
+  .sc-total { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; padding: .85rem .5rem 0; font-weight: 600; }
+  .sc-total span { color: var(--muted); font-weight: 400; margin-right: .35rem; }
+  .legend-marks { color: var(--muted); font-size: .85rem; margin: .6rem 0 0; }
+
+  /* Overview */
+  dl.overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr)); gap: 1rem 1.5rem; margin: 0; }
+  dl.overview div { border-top: 2px solid var(--ink); padding-top: .4rem; }
+  dl.overview dt { color: var(--muted); font-size: .85rem; }
+  dl.overview dd { margin: 0; font-size: 1.5rem; font-weight: 700; font-stretch: 112%; }
+
+  /* Charts */
+  svg { display: block; width: 100%; height: auto; }
+  svg text { fill: var(--muted); font-family: inherit; font-size: 11px; }
+  .note { color: var(--muted); font-size: .85rem; margin: .5rem 0 0; }
+  .dist { display: flex; height: 2.25rem; border-radius: 3px; overflow: hidden; border: 1px solid var(--rule); }
+  .dist div { min-width: 2px; }
+  .dist-legend { list-style: none; margin: .75rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr)); gap: .4rem 1rem; }
+  .dist-legend li { display: flex; align-items: center; gap: .5rem; }
+  .swatch { width: .8rem; height: .8rem; border-radius: 2px; flex: none; }
+  .dist-legend b { margin-left: auto; font-weight: 600; }
+
+  /* Tables */
+  table.data { width: 100%; border-collapse: collapse; }
+  table.data th, table.data td { padding: .55rem .5rem; text-align: right; border-bottom: 1px solid var(--rule); }
+  table.data th:first-child, table.data td:first-child { text-align: left; padding-left: 0; }
+  table.data th { color: var(--muted); font-weight: 600; font-size: .85rem; }
+  .scroll { overflow-x: auto; }
+
+  /* Rounds list */
+  .rounds { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .rounds button {
+    all: unset; box-sizing: border-box; cursor: pointer; width: 100%;
+    display: grid; grid-template-columns: 1fr auto auto; gap: .25rem 1rem; align-items: baseline;
+    padding: .7rem .5rem; border-bottom: 1px solid var(--rule);
+  }
+  .rounds button:hover { background: var(--card); }
+  .rounds button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+  .rounds button[aria-current="true"] { background: var(--card); box-shadow: inset 3px 0 0 var(--green); }
+  .rounds .when { color: var(--muted); font-size: .85rem; display: block; }
+  .rounds .partial { color: var(--muted); font-size: .85rem; }
+  .empty { padding: 2rem 0; }
+  .empty code { background: var(--card); border: 1px solid var(--rule); padding: .1rem .35rem; border-radius: 3px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top">
+    <h1>Golf rounds</h1>
+    <div class="updated" id="updated"></div>
+  </div>
+  <div id="app"></div>
+</main>
+
+<script>
+const TZ = "America/Vancouver";
+const fmtDate = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, weekday: "short", month: "short", day: "numeric", year: "numeric" });
+const fmtShort = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, month: "short", day: "numeric" });
+const fmtStamp = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const sign = n => n === 0 ? "E" : n > 0 ? "+" + n : "\u2212" + Math.abs(n);
+const avg = a => a.length ? a.reduce((x, y) => x + y, 0) / a.length : null;
+const one = n => n == null ? "\u2014" : n.toFixed(1);
+
+function normalise(r) {
+  const pars = String(r.holePars || "").split("").map(Number);
+  const holes = (r.holes || []).map((h, i) => ({
+    n: h.number ?? i + 1,
+    par: pars[i],
+    strokes: h.strokes > 0 ? h.strokes : null
+  }));
+  const played = holes.filter(h => h.strokes != null && Number.isFinite(h.par));
+  const strokes = played.reduce((a, h) => a + h.strokes, 0);
+  const par = played.reduce((a, h) => a + h.par, 0);
+  return {
+    id: r.id, course: r.courseName || "Unknown course", start: new Date(r.startTime),
+    holes, played, strokes, par, toPar: strokes - par,
+    full: played.length === 18, inProgress: !!r.roundInProgress
+  };
+}
+
+function markClass(strokes, par) {
+  const d = strokes - par;
+  if (d === 0) return "";
+  const shape = d < 0 ? "under" : "over";
+  return shape + (Math.abs(d) >= 2 ? " double" : "");
+}
+
+function nineTable(holes, label, offset) {
+  if (!holes.length) return "";
+  const head = holes.map(h => `<th scope="col">${h.n}</th>`).join("");
+  const pars = holes.map(h => `<td>${Number.isFinite(h.par) ? h.par : ""}</td>`).join("");
+  const scores = holes.map(h => {
+    if (h.strokes == null) return `<td class="skipped" aria-label="not played">\u2013</td>`;
+    const cls = Number.isFinite(h.par) ? markClass(h.strokes, h.par) : "";
+    return `<td><span class="mark ${cls}">${h.strokes}</span></td>`;
+  }).join("");
+  const p = holes.filter(h => h.strokes != null && Number.isFinite(h.par));
+  const sPar = p.reduce((a, h) => a + h.par, 0);
+  const sStr = p.reduce((a, h) => a + h.strokes, 0);
+  return `
+  <table class="nine">
+    <thead><tr><th scope="col">Hole</th>${head}<th scope="col" class="sub">${label}</th></tr></thead>
+    <tbody>
+      <tr><td>Par</td>${pars}<td class="sub">${sPar || ""}</td></tr>
+      <tr class="score"><td>Score</td>${scores}<td class="sub">${p.length ? sStr : ""}</td></tr>
+    </tbody>
+  </table>`;
+}
+
+function scorecard(r) {
+  const front = r.holes.slice(0, 9), back = r.holes.slice(9, 18);
+  return `
+  <div class="sc-head">
+    <div class="sc-course">${esc(r.course)}</div>
+    <div class="sc-meta">${fmtDate.format(r.start)}${r.inProgress ? " (in progress)" : ""}</div>
+  </div>
+  <div class="card">
+    ${nineTable(front, "Out")}
+    ${nineTable(back, "In")}
+    <div class="sc-total">
+      <div><span>Total</span>${r.strokes}</div>
+      <div><span>To par</span>${sign(r.toPar)}</div>
+      <div><span>Holes</span>${r.played.length}</div>
+    </div>
+  </div>
+  <p class="legend-marks">Circle: under par. Square: over par. Double outline: two or more away from par.</p>`;
+}
+
+function overview(rounds) {
+  const fulls = rounds.filter(r => r.full);
+  const best = fulls.length ? Math.min(...fulls.map(r => r.strokes)) : null;
+  const holes = rounds.reduce((a, r) => a + r.played.length, 0);
+  const items = [
+    ["Rounds", rounds.length],
+    ["Holes played", holes],
+    ["Best 18 holes", best ?? "\u2014"],
+    ["Average 18 holes", one(avg(fulls.map(r => r.strokes)))]
+  ];
+  return `<dl class="overview">${items.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>`;
+}
+
+function trendChart(rounds) {
+  if (rounds.length < 2) return `<p class="note">The trend chart appears once you have two rounds.</p>`;
+  const W = 640, H = 230, L = 36, R = 12, T = 14, B = 30;
+  const vals = rounds.map(r => r.toPar);
+  const lo = Math.min(0, Math.floor(Math.min(...vals) / 5) * 5);
+  const hi = Math.max(5, Math.ceil(Math.max(...vals) / 5) * 5);
+  const x = i => L + (rounds.length === 1 ? 0 : (i / (rounds.length - 1)) * (W - L - R));
+  const y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+  let grid = "";
+  for (let t = lo; t <= hi; t += 5) {
+    grid += `<line x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}" stroke="var(--rule)" ${t === 0 ? 'stroke-width="1.5"' : ""}/>`;
+    grid += `<text x="${L - 6}" y="${y(t) + 4}" text-anchor="end">${t === 0 ? "E" : sign(t)}</text>`;
+  }
+  const path = rounds.map((r, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(r.toPar).toFixed(1)}`).join(" ");
+  const dots = rounds.map((r, i) => r.full
+    ? `<circle cx="${x(i)}" cy="${y(r.toPar)}" r="5" fill="var(--green)"><title>${esc(r.course)}: ${sign(r.toPar)}</title></circle>`
+    : `<circle cx="${x(i)}" cy="${y(r.toPar)}" r="4.5" fill="var(--card)" stroke="var(--green)" stroke-width="2"><title>${esc(r.course)}: ${sign(r.toPar)} over ${r.played.length} holes</title></circle>`
+  ).join("");
+  const labelIdx = rounds.length <= 6 ? rounds.map((_, i) => i) : [0, Math.floor((rounds.length - 1) / 2), rounds.length - 1];
+  const xl = labelIdx.map(i => `<text x="${x(i)}" y="${H - 8}" text-anchor="${i === 0 ? "start" : i === rounds.length - 1 ? "end" : "middle"}">${fmtShort.format(rounds[i].start)}</text>`).join("");
+  return `
+  <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Score to par for each round, oldest to newest">
+    ${grid}
+    <path d="${path}" fill="none" stroke="var(--green)" stroke-width="2"/>
+    ${dots}${xl}
+  </svg>
+  <p class="note">Score to par for each round. Hollow dots are rounds with fewer than 18 holes, measured over the holes played.</p>`;
+}
+
+function distribution(rounds) {
+  const buckets = [
+    ["Eagle or better", d => d <= -2, "#1f4f8f"],
+    ["Birdie", d => d === -1, "var(--green)"],
+    ["Par", d => d === 0, "var(--muted)"],
+    ["Bogey", d => d === 1, "var(--sand)"],
+    ["Double bogey", d => d === 2, "var(--brick)"],
+    ["Triple or worse", d => d >= 3, "#5a2020"]
+  ];
+  const diffs = rounds.flatMap(r => r.played.map(h => h.strokes - h.par));
+  if (!diffs.length) return "";
+  const counts = buckets.map(([, f]) => diffs.filter(f).length);
+  const bar = buckets.map(([name, , c], i) => counts[i] ? `<div style="flex:${counts[i]};background:${c}" title="${name}: ${counts[i]}"></div>` : "").join("");
+  const legend = buckets.map(([name, , c], i) =>
+    `<li><span class="swatch" style="background:${c}"></span>${name}<b>${counts[i]} (${Math.round(counts[i] / diffs.length * 100)}%)</b></li>`).join("");
+  return `<div class="dist" role="img" aria-label="Share of holes by result">${bar}</div><ul class="dist-legend">${legend}</ul>`;
+}
+
+function parTable(rounds) {
+  const holes = rounds.flatMap(r => r.played);
+  const rows = [3, 4, 5].map(p => {
+    const h = holes.filter(x => x.par === p);
+    if (!h.length) return "";
+    const a = avg(h.map(x => x.strokes));
+    const d = +(a - p).toFixed(2);
+    return `<tr><td>Par ${p}</td><td>${h.length}</td><td>${a.toFixed(2)}</td><td>${sign(d)}</td></tr>`;
+  }).join("");
+  if (!rows) return "";
+  return `<div class="scroll"><table class="data"><thead><tr><th>Hole type</th><th>Holes</th><th>Average score</th><th>Average to par</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+}
+
+function courseTable(rounds) {
+  const by = new Map();
+  rounds.forEach(r => { if (!by.has(r.course)) by.set(r.course, []); by.get(r.course).push(r); });
+  const rows = [...by.entries()].sort((a, b) => b[1].length - a[1].length).map(([name, rs]) => {
+    const fulls = rs.filter(r => r.full);
+    const best = fulls.length ? Math.min(...fulls.map(r => r.strokes)) : "\u2014";
+    const a = avg(fulls.map(r => r.toPar));
+    return `<tr><td>${esc(name)}</td><td>${rs.length}</td><td>${best}</td><td>${a == null ? "\u2014" : (a > 0 ? "+" : a < 0 ? "\u2212" : "") + Math.abs(a).toFixed(1)}</td></tr>`;
+  }).join("");
+  return `<div class="scroll"><table class="data"><thead><tr><th>Course</th><th>Rounds</th><th>Best 18</th><th>Average to par</th></tr></thead><tbody>${rows}</tbody></table></div>
+  <p class="note">Best and average only count rounds with all 18 holes.</p>`;
+}
+
+function roundsList(rounds, selectedId) {
+  const items = [...rounds].reverse().map(r => `
+    <li><button type="button" data-id="${r.id}" ${r.id === selectedId ? 'aria-current="true"' : ""}>
+      <span>${esc(r.course)}<span class="when">${fmtDate.format(r.start)}</span></span>
+      <span class="partial">${r.full ? "" : r.played.length + " holes"}</span>
+      <strong>${r.strokes} (${sign(r.toPar)})</strong>
+    </button></li>`).join("");
+  return `<ul class="rounds">${items}</ul>`;
+}
+
+function render(data) {
+  const app = document.getElementById("app");
+  const rounds = (data.rounds || []).map(normalise).filter(r => r.played.length > 0)
+    .sort((a, b) => a.start - b.start);
+  document.getElementById("updated").textContent = data.updated
+    ? "Updated " + fmtStamp.format(new Date(data.updated)) : "";
+
+  if (!rounds.length) {
+    app.innerHTML = `<div class="empty"><h2>No rounds yet</h2><p>Run <code>python fetch_golf.py</code> to pull your rounds from Garmin, then reload this page.</p></div>`;
+    return;
+  }
+
+  let selected = rounds[rounds.length - 1].id;
+  const draw = () => {
+    const r = rounds.find(x => x.id === selected);
+    app.innerHTML = `
+      <div id="card">${scorecard(r)}</div>
+      <section><h2>Overview</h2>${overview(rounds)}</section>
+      <section><h2>Score trend</h2>${trendChart(rounds)}</section>
+      <section><h2>Results by hole</h2>${distribution(rounds)}</section>
+      <section><h2>Scoring by hole type</h2>${parTable(rounds)}</section>
+      <section><h2>Courses</h2>${courseTable(rounds)}</section>
+      <section><h2>All rounds</h2>${roundsList(rounds, selected)}</section>`;
+    app.querySelectorAll(".rounds button").forEach(b => b.addEventListener("click", () => {
+      selected = Number(b.dataset.id) || b.dataset.id;
+      draw();
+      document.getElementById("card").scrollIntoView({ behavior: "smooth", block: "start" });
+    }));
+  };
+  draw();
+}
+
+fetch("data/rounds.json", { cache: "no-store" })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(() => render({ rounds: [] }));
+</script>
+</body>
+</html>

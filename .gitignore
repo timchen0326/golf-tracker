@@ -1,0 +1,11 @@
+# Environments and credentials: never commit these
+garmin-env/
+.venv/
+__pycache__/
+garmin_tokens.json
+.garminconnect/
+.DS_Store
+
+# Raw Garmin responses (shot data can include GPS positions and timestamps).
+# Remove this line later if you want shot stats on the site and are happy to publish them.
+data/raw/

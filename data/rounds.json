@@ -1,0 +1,265 @@
+{
+  "rounds": [
+    {
+      "courseName": "Mayfair Lakes Golf & Country Club",
+      "endTime": "2026-10-01T02:19:15.000Z",
+      "handicappedStrokes": 70,
+      "holePars": "444354434453443445",
+      "holes": [
+        {
+          "number": 1,
+          "strokes": 7
+        },
+        {
+          "number": 2,
+          "strokes": 5
+        },
+        {
+          "number": 3,
+          "strokes": 4
+        },
+        {
+          "number": 4,
+          "strokes": 4
+        },
+        {
+          "number": 5,
+          "strokes": 6
+        },
+        {
+          "number": 6,
+          "strokes": 5
+        },
+        {
+          "number": 7,
+          "strokes": 6
+        },
+        {
+          "number": 8,
+          "strokes": 5
+        },
+        {
+          "number": 9,
+          "strokes": 7
+        },
+        {
+          "number": 10,
+          "strokes": 6
+        },
+        {
+          "number": 11,
+          "strokes": 7
+        },
+        {
+          "number": 12,
+          "strokes": 4
+        },
+        {
+          "number": 13,
+          "strokes": 7
+        },
+        {
+          "number": 14,
+          "strokes": 6
+        },
+        {
+          "number": 15
+        },
+        {
+          "number": 16
+        },
+        {
+          "number": 17
+        },
+        {
+          "number": 18
+        }
+      ],
+      "holesCompleted": 14,
+      "id": 386213569,
+      "roundInProgress": false,
+      "roundType": "ALL",
+      "scoreType": "STROKE_PLAY",
+      "scoreWithHandicap": 15,
+      "scoreWithoutHandicap": 24,
+      "startTime": "2026-09-30T22:58:44.000Z",
+      "strokes": 79
+    },
+    {
+      "courseName": "Langara Golf Course",
+      "endTime": "2026-10-03T02:24:14.000Z",
+      "handicappedStrokes": 67,
+      "holePars": "435444434453434544",
+      "holes": [
+        {
+          "number": 1,
+          "strokes": 7
+        },
+        {
+          "number": 2,
+          "strokes": 5
+        },
+        {
+          "number": 3,
+          "strokes": 7
+        },
+        {
+          "number": 4,
+          "strokes": 3
+        },
+        {
+          "number": 5,
+          "strokes": 5
+        },
+        {
+          "number": 6,
+          "strokes": 7
+        },
+        {
+          "number": 7,
+          "strokes": 6
+        },
+        {
+          "number": 8,
+          "strokes": 6
+        },
+        {
+          "number": 9,
+          "strokes": 5
+        },
+        {
+          "number": 10,
+          "strokes": 7
+        },
+        {
+          "number": 11,
+          "strokes": 7
+        },
+        {
+          "number": 12,
+          "strokes": 4
+        },
+        {
+          "number": 13,
+          "strokes": 5
+        },
+        {
+          "number": 14,
+          "strokes": 5
+        },
+        {
+          "number": 15,
+          "strokes": 6
+        },
+        {
+          "number": 16
+        },
+        {
+          "number": 17
+        },
+        {
+          "number": 18
+        }
+      ],
+      "holesCompleted": 15,
+      "id": 386486670,
+      "roundInProgress": false,
+      "roundType": "ALL",
+      "scoreType": "STROKE_PLAY",
+      "scoreWithHandicap": 9,
+      "scoreWithoutHandicap": 27,
+      "startTime": "2026-10-02T22:54:47.000Z",
+      "strokes": 85
+    },
+    {
+      "courseName": "The Redwoods Golf Course",
+      "endTime": "2026-10-05T02:28:39.000Z",
+      "handicappedStrokes": 66,
+      "holePars": "443544344443454435",
+      "holes": [
+        {
+          "number": 1,
+          "strokes": 5
+        },
+        {
+          "number": 2,
+          "strokes": 5
+        },
+        {
+          "number": 3,
+          "strokes": 3
+        },
+        {
+          "number": 4,
+          "strokes": 7
+        },
+        {
+          "number": 5,
+          "strokes": 6
+        },
+        {
+          "number": 6,
+          "strokes": 5
+        },
+        {
+          "number": 7,
+          "strokes": 6
+        },
+        {
+          "number": 8,
+          "strokes": 5
+        },
+        {
+          "number": 9,
+          "strokes": 5
+        },
+        {
+          "number": 10,
+          "strokes": 5
+        },
+        {
+          "number": 11,
+          "strokes": 4
+        },
+        {
+          "number": 12,
+          "strokes": 4
+        },
+        {
+          "number": 13,
+          "strokes": 5
+        },
+        {
+          "number": 14,
+          "strokes": 7
+        },
+        {
+          "number": 15,
+          "strokes": 5
+        },
+        {
+          "number": 16,
+          "strokes": 6
+        },
+        {
+          "number": 17,
+          "strokes": 6
+        },
+        {
+          "number": 18,
+          "strokes": 5
+        }
+      ],
+      "holesCompleted": 18,
+      "id": 386888035,
+      "roundInProgress": false,
+      "roundType": "ALL",
+      "scoreType": "STROKE_PLAY",
+      "scoreWithHandicap": -5,
+      "scoreWithoutHandicap": 23,
+      "startTime": "2026-10-04T22:06:57.000Z",
+      "strokes": 94
+    }
+  ],
+  "updated": "2026-10-06T23:06:31+00:00"
+}
