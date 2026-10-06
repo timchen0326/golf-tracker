@@ -25,12 +25,13 @@ ROUNDS_FILE = DATA / "rounds.json"
 PRIVATE_FIELDS = {"customerId", "playerProfileId"}
 
 
-   def login() -> Garmin:
-       client = Garmin(os.environ.get("GARMIN_EMAIL") or None,
-                       os.environ.get("GARMIN_PASSWORD") or None)
-       tokens = os.environ.get("GARMIN_TOKENS")
-       client.login(tokens if tokens else "~/.garminconnect")
-       return client
+def login() -> Garmin:
+    client = Garmin(os.environ.get("GARMIN_EMAIL") or None,
+                    os.environ.get("GARMIN_PASSWORD") or None)
+    tokens = os.environ.get("GARMIN_TOKENS")
+    # login() accepts either a token-store path or the token JSON itself.
+    client.login(tokens if tokens else "~/.garminconnect")
+    return client
 
 
 def clean(row: dict) -> dict:
