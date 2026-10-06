@@ -1,0 +1,90 @@
+{
+  "bunkersPerRound": 1.0,
+  "eighteenHoleRoundSummary": {
+    "averageScore": 23,
+    "bestScore": 23,
+    "numRounds": 1
+  },
+  "handicap": 22.41,
+  "handicapTrend": "UNKNOWN",
+  "nineHoleRoundSummary": {
+    "numRounds": 0
+  },
+  "numRounds": 3,
+  "penaltiesPerRound": 3.0,
+  "rankingByAll": {
+    "approach": 60,
+    "chip": 55,
+    "drive": 63,
+    "driveDistance": 7
+  },
+  "rankingByConnections": {
+    "approach": 1.0,
+    "chip": 1.0,
+    "drive": 2.0,
+    "driveDistance": 2.0
+  },
+  "rankingByGroup": {
+    "approach": 67,
+    "chip": 57,
+    "drive": 70,
+    "driveDistance": 7
+  },
+  "recoveriesPerRound": 4.0,
+  "roundStat": {
+    "percentFairwayHit": 50.0,
+    "percentFairwayLeft": 36.11,
+    "percentFairwayRight": 13.89,
+    "percentGir": 21.28,
+    "puttsPerHole": 2.26
+  },
+  "simHandicapTrend": "UNKNOWN",
+  "strokesGainedRatings": [
+    {
+      "groupRating": 3.58,
+      "groupStrokesGained": -0.28,
+      "playerRating": 4.1,
+      "playerStrokesGained": -0.18,
+      "statShotType": "DRIVE",
+      "trend": "UNKNOWN"
+    },
+    {
+      "groupRating": 3.33,
+      "groupStrokesGained": -0.33,
+      "playerRating": 3.55,
+      "playerStrokesGained": -0.29,
+      "statShotType": "APPROACH",
+      "trend": "UNKNOWN"
+    },
+    {
+      "groupRating": 2.97,
+      "groupStrokesGained": -0.41,
+      "playerRating": 3.2,
+      "playerStrokesGained": -0.36,
+      "statShotType": "CHIP",
+      "trend": "UNKNOWN"
+    },
+    {
+      "groupRating": 5.0,
+      "groupStrokesGained": 0.01,
+      "statShotType": "PUTT",
+      "trend": "UNKNOWN"
+    },
+    {
+      "groupRating": 3.3,
+      "groupStrokesGained": -0.34,
+      "playerRating": 3.45,
+      "playerStrokesGained": -0.31,
+      "statShotType": "BUNKER",
+      "trend": "UNKNOWN"
+    },
+    {
+      "groupRating": 3.83,
+      "groupStrokesGained": -0.23,
+      "playerRating": 3.45,
+      "playerStrokesGained": -0.31,
+      "statShotType": "RECOVERY",
+      "trend": "UNKNOWN"
+    }
+  ]
+}
