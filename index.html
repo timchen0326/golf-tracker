@@ -92,8 +92,8 @@
     .rounds .partial { grid-column: 1; grid-row: 2; }
     .rrow { grid-template-columns: 3.4rem 1fr 2.8rem; gap: .4rem; }
     .sg { grid-template-columns: 4.6rem 1fr 3rem; gap: .4rem; }
-    .club { grid-template-columns: 3.6rem 1fr 3rem; gap: .4rem; }
-    .axis { margin-left: 4rem; margin-right: 3.4rem; }
+    .club { grid-template-columns: 5.2rem 1fr 2.8rem; gap: .4rem; }
+    .axis { margin-left: 5.6rem; margin-right: 3.2rem; }
   }
 
 
@@ -127,10 +127,10 @@
   .sg .na { color: var(--muted); font-size: .8rem; }
 
   /* Clubs */
-  .axis { position: relative; height: 1.1rem; margin-left: 5.1rem; margin-right: 3.9rem; font-size: .75rem; color: var(--muted); }
+  .axis { position: relative; height: 1.1rem; margin-left: 6.8rem; margin-right: 3.9rem; font-size: .75rem; color: var(--muted); }
   .axis span { position: absolute; transform: translateX(-50%); }
   .axis span:first-child { transform: none; }
-  .club { display: grid; grid-template-columns: 4.5rem 1fr 3.3rem; gap: .6rem; align-items: center; margin: .15rem 0; font-size: .9rem; }
+  .club { display: grid; grid-template-columns: 6.2rem 1fr 3.3rem; gap: .6rem; align-items: center; margin: .15rem 0; font-size: .9rem; }
   .club-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .club-val { text-align: right; font-weight: 600; }
   .club-track { position: relative; height: 1.9rem; background: repeating-linear-gradient(to right, var(--rule) 0, var(--rule) 1px, transparent 1px, transparent var(--step)); border-bottom: 1px solid var(--rule); }
@@ -205,9 +205,13 @@ const fmtDate = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, weekday: "short
 const fmtShort = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, month: "short", day: "numeric" });
 const fmtStamp = new Intl.DateTimeFormat("en-CA", { timeZone: TZ, month: "short", day: "numeric", hour: "numeric", minute: "2-digit" });
 
-// Garmin reports clubs only by numeric type. Fill in your bag here; unlisted
-// clubs show as "Club <number>" so nothing is hidden.
-const CLUB_NAMES = { 0: "Unassigned", 1: "Driver", 3: "3 Wood" };
+// Garmin reports clubs only by numeric type. These match the clubs Garmin
+// Connect lists for this bag; unlisted types show as "Club <number>".
+const CLUB_NAMES = {
+  0: "Unknown", 1: "Driver", 3: "5 Wood",
+  14: "5 Iron", 15: "6 Iron", 16: "7 Iron", 17: "8 Iron", 18: "9 Iron",
+  19: "Pitch Wedge", 21: "Sand Wedge"
+};
 const clubName = t => CLUB_NAMES[t] || "Club " + t;
 const SHOT_NAMES = { TEE: "Tee shot", APPROACH: "Approach", CHIP: "Chip", RECOVERY: "Recovery", LAYUP: "Lay-up", PUTT: "Putt", UNKNOWN: "Other", DRIVE: "Drive", BUNKER: "Bunker" };
 
@@ -494,7 +498,7 @@ function greenMiss(clubs) {
   const parts = [["Hit", "percentGreenHit", "var(--green)"], ["Short", "percentGreenMissShort", "var(--sand)"], ["Long", "percentGreenMissLong", "var(--brick)"], ["Left", "percentGreenMissLeft", "var(--blue)"], ["Right", "percentGreenMissRight", "var(--purple)"]];
   const body = rows.map(c => {
     const it = parts.map(([k, f, col]) => ({ k, c: col, v: c.clubStats[f] || 0 }));
-    return `<div class="rrow" style="grid-template-columns:4.5rem 1fr 3.2rem"><span class="lbl">${esc(clubName(c.clubTypeId))}</span>${segBar(it, "Green results with " + clubName(c.clubTypeId))}<span class="val">${Math.round(c.clubStats.percentGreenHit)}%</span></div>`;
+    return `<div class="rrow" style="grid-template-columns:6.2rem 1fr 3.2rem"><span class="lbl">${esc(clubName(c.clubTypeId))}</span>${segBar(it, "Green results with " + clubName(c.clubTypeId))}<span class="val">${Math.round(c.clubStats.percentGreenHit)}%</span></div>`;
   }).join("");
   return body + `<ul class="legend">${parts.map(([k, , c]) => `<li><span class="swatch" style="background:${c}"></span>${k}</li>`).join("")}</ul>
   <p class="note">Where approach shots ended up, per club. The number on the right is the share that hit the green. Small samples, so treat as rough.</p>`;
