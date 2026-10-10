@@ -259,7 +259,84 @@
       "scoreWithoutHandicap": 23,
       "startTime": "2026-10-04T22:06:57.000Z",
       "strokes": 94
+    },
+    {
+      "courseName": "Kings Links by the Sea",
+      "handicappedStrokes": 35,
+      "holePars": "454343544454353444",
+      "holes": [
+        {
+          "number": 1,
+          "strokes": 5
+        },
+        {
+          "number": 2,
+          "strokes": 6
+        },
+        {
+          "number": 3,
+          "strokes": 7
+        },
+        {
+          "number": 4,
+          "strokes": 6
+        },
+        {
+          "number": 5,
+          "strokes": 4
+        },
+        {
+          "number": 6,
+          "strokes": 5
+        },
+        {
+          "number": 7,
+          "strokes": 10
+        },
+        {
+          "number": 8
+        },
+        {
+          "number": 9
+        },
+        {
+          "number": 10
+        },
+        {
+          "number": 11
+        },
+        {
+          "number": 12
+        },
+        {
+          "number": 13
+        },
+        {
+          "number": 14
+        },
+        {
+          "number": 15
+        },
+        {
+          "number": 16
+        },
+        {
+          "number": 17
+        },
+        {
+          "number": 18
+        }
+      ],
+      "holesCompleted": 7,
+      "id": 387684448,
+      "roundInProgress": true,
+      "roundType": "ALL",
+      "scoreType": "STROKE_PLAY",
+      "scoreWithHandicap": 7,
+      "scoreWithoutHandicap": 15,
+      "startTime": "2026-10-10T19:42:28.000Z",
+      "strokes": 43
     }
   ],
-  "updated": "2026-10-06T23:06:31+00:00"
+  "updated": "2026-10-10T21:41:54+00:00"
 }

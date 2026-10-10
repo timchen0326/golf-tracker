@@ -1,0 +1,279 @@
+{
+  "scorecard": {
+    "courseSnapshots": [
+      {
+        "backNinePar": 36,
+        "city": "Delta",
+        "continent": "North America",
+        "country": "Canada",
+        "courseGlobalId": 17254,
+        "courseSnapshotId": 235588,
+        "frontNinePar": 36,
+        "holePars": "454343544454353444",
+        "name": "Kings Links by the Sea",
+        "phone": "604-952-0999",
+        "releaseDate": "12/06/2022",
+        "roundPar": 72,
+        "state": "BC",
+        "street": "3388 72nd St",
+        "tees": [
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "061002081612181404091507171311010305",
+            "name": "Black",
+            "rating": 73.5,
+            "slope": 136
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "061002081612181404091507171311010305",
+            "name": "Blue",
+            "rating": 71.7,
+            "slope": 129
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "061002081612181404091507171311010305",
+            "name": "Green",
+            "rating": 67.1,
+            "slope": 108
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "061002081612181404091507171311010305",
+            "name": "White",
+            "rating": 69.6,
+            "slope": 119
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "061002081612181404091507171311010305",
+            "name": "Yellow",
+            "rating": 70.1,
+            "slope": 122
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "070109151117031305140212180416081006",
+            "name": "Green",
+            "rating": 71.2,
+            "slope": 120
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "070109151117031305140212180416081006",
+            "name": "White",
+            "rating": 74.3,
+            "slope": 127
+          }
+        ],
+        "web": "http://www.kingslinks.ca",
+        "zip": "V4K 3N2"
+      }
+    ],
+    "scorecardDetails": [
+      {
+        "scorecard": {
+          "courseGlobalId": 17254,
+          "courseHandicapStr": "061002081612181404091507171311010305",
+          "courseSnapshotId": 235588,
+          "excludeFromStats": false,
+          "formattedStartTime": "2026-10-10T12:42:28-07:00",
+          "frontNineGlobalCourseId": 17254,
+          "handicapType": "MEN",
+          "handicappedStrokes": 35,
+          "holes": [
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 4,
+              "lastModifiedDt": "2026-10-10T20:00:39.000Z",
+              "number": 1,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 5
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 5,
+              "lastModifiedDt": "2026-10-10T20:20:43.000Z",
+              "number": 2,
+              "penalties": 1,
+              "putts": 2,
+              "strokes": 6
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 5,
+              "lastModifiedDt": "2026-10-10T20:35:19.000Z",
+              "number": 3,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 7
+            },
+            {
+              "handicapScore": 5,
+              "lastModifiedDt": "2026-10-10T20:47:58.000Z",
+              "number": 4,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 6
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 3,
+              "lastModifiedDt": "2026-10-10T21:02:37.000Z",
+              "number": 5,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 4
+            },
+            {
+              "handicapScore": 4,
+              "lastModifiedDt": "2026-10-10T21:12:55.000Z",
+              "number": 6,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 5
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 9,
+              "lastModifiedDt": "2026-10-10T21:33:21.000Z",
+              "number": 7,
+              "penalties": 1,
+              "putts": 4,
+              "strokes": 10
+            },
+            {
+              "number": 8
+            },
+            {
+              "number": 9
+            },
+            {
+              "number": 10
+            },
+            {
+              "number": 11
+            },
+            {
+              "number": 12
+            },
+            {
+              "number": 13
+            },
+            {
+              "number": 14
+            },
+            {
+              "number": 15
+            },
+            {
+              "number": 16
+            },
+            {
+              "number": 17
+            },
+            {
+              "number": 18
+            }
+          ],
+          "holesCompleted": 7,
+          "id": 387684448,
+          "inProgress": true,
+          "lastModifiedDt": "2026-10-10T21:33:22.000Z",
+          "playerHandicap": 21,
+          "publicRound": false,
+          "roundPlayerName": "Tim Chen",
+          "roundType": "ALL",
+          "score": 7,
+          "scoreType": "STROKE_PLAY",
+          "sensorOnPutter": false,
+          "startTime": "2026-10-10T19:42:28.000Z",
+          "startingHole": 1,
+          "strokes": 43,
+          "teeBox": "White",
+          "teeBoxRating": 69.6,
+          "teeBoxSlope": 119,
+          "unitId": "11",
+          "useHandicapScoring": true,
+          "useStrokeCounting": true
+        },
+        "scorecardStats": {
+          "backNine": {
+            "chips": 0,
+            "fairwaysHit": 0,
+            "fairwaysLeft": 0,
+            "fairwaysRecorded": 0,
+            "fairwaysRight": 0,
+            "greensInRegulation": 0,
+            "greensRecorded": 0,
+            "handicappedStrokes": 0,
+            "holesBirdie": 0,
+            "holesBogey": 0,
+            "holesDoubleEagleOrUnder": 0,
+            "holesEagle": 0,
+            "holesOverBogey": 0,
+            "holesPar": 0,
+            "holesPlayed": 0,
+            "holesUnderPar": 0,
+            "putts": 0,
+            "scoreWithHandicap": 0,
+            "scoreWithoutHandicap": 0,
+            "strokes": 0,
+            "upsAndDowns": 0
+          },
+          "frontNine": {
+            "chips": 0,
+            "fairwaysHit": 3,
+            "fairwaysLeft": 2,
+            "fairwaysRecorded": 5,
+            "fairwaysRight": 0,
+            "greensInRegulation": 1,
+            "greensRecorded": 7,
+            "handicappedStrokes": 35,
+            "holesBirdie": 0,
+            "holesBogey": 2,
+            "holesDoubleEagleOrUnder": 0,
+            "holesEagle": 0,
+            "holesOverBogey": 4,
+            "holesPar": 1,
+            "holesPlayed": 7,
+            "holesUnderPar": 0,
+            "meanPuttsPerHole": 2.4285715,
+            "putts": 17,
+            "scoreWithHandicap": 7,
+            "scoreWithoutHandicap": 15,
+            "strokes": 43,
+            "upsAndDowns": 0
+          },
+          "round": {
+            "chips": 0,
+            "fairwaysHit": 3,
+            "fairwaysLeft": 2,
+            "fairwaysRecorded": 5,
+            "fairwaysRight": 0,
+            "greensInRegulation": 1,
+            "greensRecorded": 7,
+            "handicappedStrokes": 35,
+            "holesBirdie": 0,
+            "holesBogey": 2,
+            "holesDoubleEagleOrUnder": 0,
+            "holesEagle": 0,
+            "holesOverBogey": 4,
+            "holesPar": 1,
+            "holesPlayed": 7,
+            "holesUnderPar": 0,
+            "meanPuttsPerHole": 2.4285715,
+            "putts": 17,
+            "scoreWithHandicap": 7,
+            "scoreWithoutHandicap": 15,
+            "strokes": 43,
+            "upsAndDowns": 0
+          }
+        }
+      }
+    ]
+  },
+  "shots": {}
+}
