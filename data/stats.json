@@ -1,66 +1,66 @@
 {
-  "bunkersPerRound": 1.0,
+  "bunkersPerRound": 0.75,
   "eighteenHoleRoundSummary": {
-    "averageScore": 23,
+    "averageScore": 28,
     "bestScore": 23,
-    "numRounds": 1
+    "numRounds": 2
   },
   "handicap": 22.41,
-  "handicapTrend": "UNKNOWN",
+  "handicapTrend": "UP",
   "nineHoleRoundSummary": {
     "numRounds": 0
   },
-  "numRounds": 3,
+  "numRounds": 4,
   "penaltiesPerRound": 3.0,
   "rankingByAll": {
     "approach": 60,
-    "chip": 55,
+    "chip": 41,
     "drive": 63,
-    "driveDistance": 7
+    "driveDistance": 12
   },
   "rankingByConnections": {
     "approach": 1.0,
-    "chip": 1.0,
+    "chip": 2.0,
     "drive": 2.0,
     "driveDistance": 2.0
   },
   "rankingByGroup": {
     "approach": 67,
-    "chip": 57,
+    "chip": 43,
     "drive": 70,
-    "driveDistance": 7
+    "driveDistance": 11
   },
-  "recoveriesPerRound": 4.0,
+  "recoveriesPerRound": 3.75,
   "roundStat": {
-    "percentFairwayHit": 50.0,
-    "percentFairwayLeft": 36.11,
-    "percentFairwayRight": 13.89,
-    "percentGir": 21.28,
-    "puttsPerHole": 2.26
+    "percentFairwayHit": 54.0,
+    "percentFairwayLeft": 34.0,
+    "percentFairwayRight": 12.0,
+    "percentGir": 23.08,
+    "puttsPerHole": 2.28
   },
   "simHandicapTrend": "UNKNOWN",
   "strokesGainedRatings": [
     {
       "groupRating": 3.58,
       "groupStrokesGained": -0.28,
-      "playerRating": 4.1,
-      "playerStrokesGained": -0.18,
+      "playerRating": 4.15,
+      "playerStrokesGained": -0.17,
       "statShotType": "DRIVE",
-      "trend": "UNKNOWN"
+      "trend": "UP"
     },
     {
       "groupRating": 3.33,
       "groupStrokesGained": -0.33,
-      "playerRating": 3.55,
-      "playerStrokesGained": -0.29,
+      "playerRating": 3.65,
+      "playerStrokesGained": -0.27,
       "statShotType": "APPROACH",
-      "trend": "UNKNOWN"
+      "trend": "EVEN"
     },
     {
       "groupRating": 2.97,
       "groupStrokesGained": -0.41,
-      "playerRating": 3.2,
-      "playerStrokesGained": -0.36,
+      "playerRating": 2.8,
+      "playerStrokesGained": -0.44,
       "statShotType": "CHIP",
       "trend": "UNKNOWN"
     },
@@ -81,10 +81,10 @@
     {
       "groupRating": 3.83,
       "groupStrokesGained": -0.23,
-      "playerRating": 3.45,
-      "playerStrokesGained": -0.31,
+      "playerRating": 3.7,
+      "playerStrokesGained": -0.26,
       "statShotType": "RECOVERY",
-      "trend": "UNKNOWN"
+      "trend": "UP"
     }
   ]
 }

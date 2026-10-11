@@ -262,7 +262,8 @@
     },
     {
       "courseName": "Kings Links by the Sea",
-      "handicappedStrokes": 35,
+      "endTime": "2026-10-11T00:31:39.000Z",
+      "handicappedStrokes": 83,
       "holePars": "454343544454353444",
       "holes": [
         {
@@ -294,49 +295,60 @@
           "strokes": 10
         },
         {
-          "number": 8
+          "number": 8,
+          "strokes": 5
         },
         {
-          "number": 9
+          "number": 9,
+          "strokes": 6
         },
         {
-          "number": 10
+          "number": 10,
+          "strokes": 5
         },
         {
-          "number": 11
+          "number": 11,
+          "strokes": 6
         },
         {
-          "number": 12
+          "number": 12,
+          "strokes": 6
         },
         {
-          "number": 13
+          "number": 13,
+          "strokes": 6
         },
         {
-          "number": 14
+          "number": 14,
+          "strokes": 6
         },
         {
-          "number": 15
+          "number": 15,
+          "strokes": 3
         },
         {
-          "number": 16
+          "number": 16,
+          "strokes": 6
         },
         {
-          "number": 17
+          "number": 17,
+          "strokes": 5
         },
         {
-          "number": 18
+          "number": 18,
+          "strokes": 7
         }
       ],
-      "holesCompleted": 7,
+      "holesCompleted": 18,
       "id": 387684448,
-      "roundInProgress": true,
+      "roundInProgress": false,
       "roundType": "ALL",
       "scoreType": "STROKE_PLAY",
-      "scoreWithHandicap": 7,
-      "scoreWithoutHandicap": 15,
+      "scoreWithHandicap": 11,
+      "scoreWithoutHandicap": 32,
       "startTime": "2026-10-10T19:42:28.000Z",
-      "strokes": 43
+      "strokes": 104
     }
   ],
-  "updated": "2026-10-10T21:41:54+00:00"
+  "updated": "2026-10-11T05:43:53+00:00"
 }
