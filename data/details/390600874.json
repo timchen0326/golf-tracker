@@ -1,0 +1,1335 @@
+{
+  "scorecard": {
+    "courseSnapshots": [
+      {
+        "backNinePar": 36,
+        "city": "Pitt Meadows",
+        "continent": "North America",
+        "country": "Canada",
+        "courseGlobalId": 18999,
+        "courseSnapshotId": 223734,
+        "frontNinePar": 36,
+        "holePars": "454435434543445434",
+        "name": "Swaneset Bay Resort Country Club ~ Links",
+        "phone": "604-465-3888 or 800-235-8188",
+        "releaseDate": "04/17/2024",
+        "roundPar": 72,
+        "state": "BC",
+        "street": "16651 Rannie Rd",
+        "tees": [
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "050713031701111509021214080616041810",
+            "name": "Black",
+            "rating": 74.4,
+            "slope": 137
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "050713031701111509021214080616041810",
+            "name": "Blue",
+            "rating": 72.2,
+            "slope": 131
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "050713031701111509021214080616041810",
+            "name": "Red",
+            "rating": 67.7,
+            "slope": 123
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "050713031701111509021214080616041810",
+            "name": "White",
+            "rating": 70.4,
+            "slope": 129
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "050713031701111509021214080616041810",
+            "name": "White/Red",
+            "rating": 68.5,
+            "slope": 127
+          },
+          {
+            "handicapType": "MEN",
+            "holeHandicaps": "050713031701111509021214080616041810",
+            "name": "Yellow",
+            "rating": 65.3,
+            "slope": 114
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "090713051501171103041618100208121406",
+            "name": "Blue",
+            "rating": 78.3,
+            "slope": 137
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "090713051501171103041618100208121406",
+            "name": "Red",
+            "rating": 73.1,
+            "slope": 129
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "090713051501171103041618100208121406",
+            "name": "White",
+            "rating": 76.2,
+            "slope": 134
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "090713051501171103041618100208121406",
+            "name": "White/Red",
+            "rating": 73.9,
+            "slope": 130
+          },
+          {
+            "handicapType": "WOMEN",
+            "holeHandicaps": "090713051501171103041618100208121406",
+            "name": "Yellow",
+            "rating": 70.1,
+            "slope": 122
+          }
+        ],
+        "web": "http://www.swaneset.com/",
+        "zip": "V3Y 1Z1"
+      }
+    ],
+    "scorecardDetails": [
+      {
+        "longestShotInMeters": 228.875,
+        "scorecard": {
+          "courseGlobalId": 18999,
+          "courseHandicapStr": "050713031701111509021214080616041810",
+          "courseSnapshotId": 223734,
+          "distanceWalked": 11125,
+          "endTime": "2026-11-01T21:49:39.000Z",
+          "excludeFromStats": false,
+          "formattedEndTime": "2026-11-01T13:49:39-08:00",
+          "formattedStartTime": "2026-11-01T09:14:36-08:00",
+          "frontNineGlobalCourseId": 18999,
+          "handicapType": "MEN",
+          "handicappedStrokes": 77,
+          "holes": [
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 4,
+              "number": 1,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 6
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 7,
+              "lastModifiedDt": "2026-11-01T22:57:42.000Z",
+              "number": 2,
+              "penalties": 1,
+              "putts": 3,
+              "strokes": 8
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 5,
+              "number": 3,
+              "penalties": 1,
+              "putts": 2,
+              "strokes": 6
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 3,
+              "number": 4,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 5
+            },
+            {
+              "handicapScore": 3,
+              "number": 5,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 4
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 6,
+              "number": 6,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 8
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 6,
+              "number": 7,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 7
+            },
+            {
+              "handicapScore": 3,
+              "number": 8,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 4
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 5,
+              "number": 9,
+              "penalties": 1,
+              "putts": 2,
+              "strokes": 6
+            },
+            {
+              "fairwayShotOutcome": "LEFT",
+              "handicapScore": 7,
+              "number": 10,
+              "penalties": 1,
+              "putts": 2,
+              "strokes": 9
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 3,
+              "number": 11,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 4
+            },
+            {
+              "handicapScore": 3,
+              "number": 12,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 4
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 3,
+              "number": 13,
+              "penalties": 0,
+              "putts": 1,
+              "strokes": 4
+            },
+            {
+              "fairwayShotOutcome": "RIGHT",
+              "handicapScore": 3,
+              "number": 14,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 5
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 4,
+              "number": 15,
+              "penalties": 0,
+              "putts": 1,
+              "strokes": 5
+            },
+            {
+              "fairwayShotOutcome": "RIGHT",
+              "handicapScore": 4,
+              "number": 16,
+              "penalties": 0,
+              "putts": 2,
+              "strokes": 6
+            },
+            {
+              "handicapScore": 3,
+              "number": 17,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 4
+            },
+            {
+              "fairwayShotOutcome": "HIT",
+              "handicapScore": 5,
+              "number": 18,
+              "penalties": 0,
+              "putts": 3,
+              "strokes": 6
+            }
+          ],
+          "holesCompleted": 18,
+          "id": 390600874,
+          "inProgress": false,
+          "lastModifiedDt": "2026-11-01T22:57:41.000Z",
+          "playerHandicap": 24,
+          "publicRound": false,
+          "roundPlayerName": "Tim Chen",
+          "roundType": "ALL",
+          "score": 5,
+          "scoreType": "STROKE_PLAY",
+          "sensorOnPutter": false,
+          "startTime": "2026-11-01T17:14:36.000Z",
+          "stepsTaken": 11410,
+          "strokes": 101,
+          "teeBox": "White",
+          "teeBoxRating": 70.4,
+          "teeBoxSlope": 129,
+          "unitId": "3332052590",
+          "useHandicapScoring": true,
+          "useStrokeCounting": true
+        },
+        "scorecardStats": {
+          "backNine": {
+            "chips": 1,
+            "fairwaysHit": 4,
+            "fairwaysLeft": 1,
+            "fairwaysRecorded": 7,
+            "fairwaysRight": 2,
+            "greensInRegulation": 2,
+            "greensRecorded": 9,
+            "handicappedStrokes": 35,
+            "holesBirdie": 0,
+            "holesBogey": 3,
+            "holesDoubleEagleOrUnder": 0,
+            "holesEagle": 0,
+            "holesOverBogey": 3,
+            "holesPar": 3,
+            "holesPlayed": 9,
+            "holesUnderPar": 0,
+            "meanPuttsPerHole": 2.0,
+            "putts": 18,
+            "scoreWithHandicap": -1,
+            "scoreWithoutHandicap": 11,
+            "strokes": 47,
+            "upsAndDowns": 0
+          },
+          "frontNine": {
+            "chips": 4,
+            "fairwaysHit": 3,
+            "fairwaysLeft": 4,
+            "fairwaysRecorded": 7,
+            "fairwaysRight": 0,
+            "greensInRegulation": 2,
+            "greensRecorded": 9,
+            "handicappedStrokes": 42,
+            "holesBirdie": 0,
+            "holesBogey": 3,
+            "holesDoubleEagleOrUnder": 0,
+            "holesEagle": 0,
+            "holesOverBogey": 6,
+            "holesPar": 0,
+            "holesPlayed": 9,
+            "holesUnderPar": 0,
+            "meanPuttsPerHole": 2.5555556,
+            "putts": 23,
+            "scoreWithHandicap": 6,
+            "scoreWithoutHandicap": 18,
+            "strokes": 54,
+            "upsAndDowns": 0
+          },
+          "round": {
+            "chips": 5,
+            "fairwaysHit": 7,
+            "fairwaysLeft": 5,
+            "fairwaysRecorded": 14,
+            "fairwaysRight": 2,
+            "greensInRegulation": 4,
+            "greensRecorded": 18,
+            "handicappedStrokes": 77,
+            "holesBirdie": 0,
+            "holesBogey": 6,
+            "holesDoubleEagleOrUnder": 0,
+            "holesEagle": 0,
+            "holesOverBogey": 9,
+            "holesPar": 3,
+            "holesPlayed": 18,
+            "holesUnderPar": 0,
+            "meanPuttsPerHole": 2.2777777,
+            "putts": 41,
+            "scoreWithHandicap": 5,
+            "scoreWithoutHandicap": 29,
+            "strokes": 101,
+            "upsAndDowns": 0
+          }
+        },
+        "shotCounts": [
+          5,
+          6,
+          3,
+          2,
+          2,
+          5,
+          3,
+          1,
+          2,
+          4,
+          2,
+          1,
+          2,
+          4,
+          4,
+          4,
+          1,
+          3
+        ],
+        "statsComparison": {
+          "approachRating": "POOR",
+          "chipRating": "GOOD",
+          "driveRating": "POOR",
+          "puttRating": "UNKNOWN"
+        }
+      }
+    ]
+  },
+  "shots": {
+    "clubDetails": [
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 0,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 0,
+        "lastModifiedTime": "2026-11-02T05:58:19.731Z",
+        "retired": false,
+        "shaftLength": 0.0
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 1,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604026,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 45.5
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 3,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604028,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 42.5
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 14,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604033,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 37.5
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 15,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604034,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 37.0
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 17,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604036,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 36.0
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 19,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604038,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 35.5
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 21,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604040,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 35.25
+      },
+      {
+        "adviceDistance": 0,
+        "averageDistance": 0,
+        "clubTypeId": 23,
+        "deleted": false,
+        "flexTypeId": "REGULAR",
+        "id": 956604042,
+        "lastModifiedTime": "2026-09-28T05:52:09.000Z",
+        "retired": false,
+        "shaftLength": 35.0
+      }
+    ],
+    "holeShots": [
+      {
+        "holeNumber": 1,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 1,
+            "id": 10947920742,
+            "meters": 190.649,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554004000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 1,
+            "id": 10947920703,
+            "meters": 9.71309,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554038000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604033,
+            "excludeFromStats": false,
+            "holeNumber": 1,
+            "id": 10947920744,
+            "meters": 74.1301,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554186000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604040,
+            "excludeFromStats": false,
+            "holeNumber": 1,
+            "id": 10947920711,
+            "meters": 18.1124,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554226000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604040,
+            "excludeFromStats": false,
+            "holeNumber": 1,
+            "id": 10947920715,
+            "meters": 66.0759,
+            "scorecardId": 390600874,
+            "shotOrder": 5,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554406000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "CHIP"
+          }
+        ]
+      },
+      {
+        "holeNumber": 2,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 2,
+            "id": 10947920733,
+            "meters": 135.384,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554812000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 2,
+            "id": 10947920706,
+            "meters": 19.8946,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554884000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "LAYUP"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604033,
+            "excludeFromStats": false,
+            "holeNumber": 2,
+            "id": 10947920745,
+            "meters": 76.4381,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793554979000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "LAYUP"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604028,
+            "excludeFromStats": false,
+            "holeNumber": 2,
+            "id": 10947920725,
+            "meters": 150.138,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793555214000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "LAYUP"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604040,
+            "excludeFromStats": false,
+            "holeNumber": 2,
+            "id": 10947920728,
+            "meters": 12.3668,
+            "scorecardId": 390600874,
+            "shotOrder": 5,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793555265000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 2,
+            "id": 10947920739,
+            "meters": 100.794,
+            "scorecardId": 390600874,
+            "shotOrder": 6,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793555342000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          }
+        ]
+      },
+      {
+        "holeNumber": 3,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 3,
+            "id": 10947920749,
+            "meters": 210.961,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793556017000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604038,
+            "excludeFromStats": false,
+            "holeNumber": 3,
+            "id": 10947920723,
+            "meters": 123.833,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793556187000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604040,
+            "excludeFromStats": false,
+            "holeNumber": 3,
+            "id": 10947920720,
+            "meters": 29.0643,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793556285000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "holeNumber": 4,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 4,
+            "id": 10947920714,
+            "meters": 198.786,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793556868000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 4,
+            "id": 10947920707,
+            "meters": 75.0802,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793556973000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          }
+        ]
+      },
+      {
+        "holeNumber": 5,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 5,
+            "id": 10947920713,
+            "meters": 143.391,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793557697000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 5,
+            "id": 10947920732,
+            "meters": 34.6679,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793557823000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "CHIP"
+          }
+        ]
+      },
+      {
+        "holeNumber": 6,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 6,
+            "id": 10947920731,
+            "meters": 217.713,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793558598000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604028,
+            "excludeFromStats": false,
+            "holeNumber": 6,
+            "id": 10947920740,
+            "meters": 41.3474,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793558667000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 6,
+            "id": 10947920724,
+            "meters": 89.8814,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793558845000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 6,
+            "id": 10947920730,
+            "meters": 112.827,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793558948000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 6,
+            "id": 10947920748,
+            "meters": 36.1077,
+            "scorecardId": 390600874,
+            "shotOrder": 5,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793559004000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "CHIP"
+          }
+        ]
+      },
+      {
+        "holeNumber": 7,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 7,
+            "id": 10947920747,
+            "meters": 204.167,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793559566000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 7,
+            "id": 10947920705,
+            "meters": 70.7775,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793559789000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 7,
+            "id": 10947920734,
+            "meters": 6.89511,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793559817000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "CHIP"
+          }
+        ]
+      },
+      {
+        "holeNumber": 8,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604034,
+            "excludeFromStats": false,
+            "holeNumber": 8,
+            "id": 10947920709,
+            "meters": 153.936,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793560527000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          }
+        ]
+      },
+      {
+        "holeNumber": 9,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 9,
+            "id": 10947920750,
+            "meters": 221.72,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793561288000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604042,
+            "excludeFromStats": false,
+            "holeNumber": 9,
+            "id": 10947920708,
+            "meters": 112.16,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793561583000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          }
+        ]
+      },
+      {
+        "holeNumber": 10,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 10,
+            "id": 10947920712,
+            "meters": 228.875,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793562288000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604028,
+            "excludeFromStats": false,
+            "holeNumber": 10,
+            "id": 10947920741,
+            "meters": 143.942,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793562506000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 10,
+            "id": 10947920737,
+            "meters": 129.717,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793562810000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604042,
+            "excludeFromStats": false,
+            "holeNumber": 10,
+            "id": 10947920727,
+            "meters": 23.1677,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793563009000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "holeNumber": 11,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 11,
+            "id": 10947920729,
+            "meters": 186.973,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793563493000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604040,
+            "excludeFromStats": false,
+            "holeNumber": 11,
+            "id": 10947920752,
+            "meters": 97.5908,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793563670000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          }
+        ]
+      },
+      {
+        "holeNumber": 12,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604034,
+            "excludeFromStats": false,
+            "holeNumber": 12,
+            "id": 10947920721,
+            "meters": 154.182,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793564266000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          }
+        ]
+      },
+      {
+        "holeNumber": 13,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604028,
+            "excludeFromStats": false,
+            "holeNumber": 13,
+            "id": 10947920753,
+            "meters": 180.632,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793564762000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604036,
+            "excludeFromStats": false,
+            "holeNumber": 13,
+            "id": 10947920751,
+            "meters": 142.535,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793565073000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          }
+        ]
+      },
+      {
+        "holeNumber": 14,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 14,
+            "id": 10947920710,
+            "meters": 195.862,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793565624000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604033,
+            "excludeFromStats": false,
+            "holeNumber": 14,
+            "id": 10947920719,
+            "meters": 54.8327,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793565835000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 14,
+            "id": 10947920718,
+            "meters": 57.3409,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793565988000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604040,
+            "excludeFromStats": false,
+            "holeNumber": 14,
+            "id": 10947920702,
+            "meters": 32.2345,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793566071000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "holeNumber": 15,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 15,
+            "id": 10947920717,
+            "meters": 92.8083,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793566581000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604028,
+            "excludeFromStats": false,
+            "holeNumber": 15,
+            "id": 10947920746,
+            "meters": 153.505,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793566838000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "LAYUP"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604033,
+            "excludeFromStats": false,
+            "holeNumber": 15,
+            "id": 10947920701,
+            "meters": 130.345,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793567078000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 15,
+            "id": 10947920738,
+            "meters": 36.6526,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793567195000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          }
+        ]
+      },
+      {
+        "holeNumber": 16,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 16,
+            "id": 10947920726,
+            "meters": 169.33,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793567842000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604034,
+            "excludeFromStats": false,
+            "holeNumber": 16,
+            "id": 10947920716,
+            "meters": 86.2826,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793568000000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 16,
+            "id": 10947920743,
+            "meters": 31.6348,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793568049000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "RECOVERY"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 16,
+            "id": 10947920736,
+            "meters": 19.1691,
+            "scorecardId": 390600874,
+            "shotOrder": 4,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793568093000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "CHIP"
+          }
+        ]
+      },
+      {
+        "holeNumber": 17,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604036,
+            "excludeFromStats": false,
+            "holeNumber": 17,
+            "id": 10947920704,
+            "meters": 135.716,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793568702000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          }
+        ]
+      },
+      {
+        "holeNumber": 18,
+        "shots": [
+          {
+            "autoShotType": "USED",
+            "clubId": 956604026,
+            "excludeFromStats": false,
+            "holeNumber": 18,
+            "id": 10947920722,
+            "meters": 200.746,
+            "scorecardId": 390600874,
+            "shotOrder": 1,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793569298000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "TEE"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 0,
+            "excludeFromStats": false,
+            "holeNumber": 18,
+            "id": 10947920754,
+            "meters": 157.868,
+            "scorecardId": 390600874,
+            "shotOrder": 2,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793569497000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "APPROACH"
+          },
+          {
+            "autoShotType": "USED",
+            "clubId": 956604028,
+            "excludeFromStats": false,
+            "holeNumber": 18,
+            "id": 10947920735,
+            "meters": 21.0038,
+            "scorecardId": 390600874,
+            "shotOrder": 3,
+            "shotSource": "DEVICE_AUTO",
+            "shotTime": 1793569746000,
+            "shotTimeZoneOffset": -28800000,
+            "shotType": "UNKNOWN"
+          }
+        ]
+      }
+    ]
+  }
+}
