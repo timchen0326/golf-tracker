@@ -1,17 +1,17 @@
 {
-  "bunkersPerRound": 1.33,
+  "bunkersPerRound": 1.29,
   "eighteenHoleRoundSummary": {
-    "averageScore": 27,
-    "bestScore": 23,
-    "numRounds": 4
+    "averageScore": 25,
+    "bestScore": 16,
+    "numRounds": 5
   },
-  "handicap": 24.61,
+  "handicap": 22.24,
   "handicapTrend": "UP",
   "nineHoleRoundSummary": {
     "numRounds": 0
   },
-  "numRounds": 6,
-  "penaltiesPerRound": 3.67,
+  "numRounds": 7,
+  "penaltiesPerRound": 3.29,
   "rankingByAll": {
     "approach": 60,
     "chip": 42,
@@ -30,13 +30,13 @@
     "drive": 70,
     "driveDistance": 11
   },
-  "recoveriesPerRound": 3.67,
+  "recoveriesPerRound": 3.14,
   "roundStat": {
-    "percentFairwayHit": 54.67,
-    "percentFairwayLeft": 29.33,
-    "percentFairwayRight": 16.0,
-    "percentGir": 24.75,
-    "puttsPerHole": 2.3
+    "percentFairwayHit": 56.96,
+    "percentFairwayLeft": 27.85,
+    "percentFairwayRight": 15.19,
+    "percentGir": 28.57,
+    "puttsPerHole": 2.28
   },
   "simHandicapTrend": "UNKNOWN",
   "strokesGainedRatings": [
@@ -46,23 +46,23 @@
       "playerRating": 4.1,
       "playerStrokesGained": -0.18,
       "statShotType": "DRIVE",
-      "trend": "EVEN"
+      "trend": "UP"
     },
     {
       "groupRating": 3.33,
       "groupStrokesGained": -0.33,
-      "playerRating": 3.65,
-      "playerStrokesGained": -0.27,
+      "playerRating": 3.6,
+      "playerStrokesGained": -0.28,
       "statShotType": "APPROACH",
       "trend": "EVEN"
     },
     {
       "groupRating": 2.97,
       "groupStrokesGained": -0.41,
-      "playerRating": 2.8,
-      "playerStrokesGained": -0.44,
+      "playerRating": 2.9,
+      "playerStrokesGained": -0.42,
       "statShotType": "CHIP",
-      "trend": "EVEN"
+      "trend": "UP"
     },
     {
       "groupRating": 5.0,
@@ -76,7 +76,7 @@
       "playerRating": 3.7,
       "playerStrokesGained": -0.26,
       "statShotType": "BUNKER",
-      "trend": "UNKNOWN"
+      "trend": "UP"
     },
     {
       "groupRating": 3.83,
