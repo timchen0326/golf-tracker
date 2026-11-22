@@ -1,21 +1,21 @@
 {
-  "bunkersPerRound": 1.29,
+  "bunkersPerRound": 1.38,
   "eighteenHoleRoundSummary": {
     "averageScore": 25,
     "bestScore": 16,
-    "numRounds": 5
+    "numRounds": 6
   },
   "handicap": 22.24,
   "handicapTrend": "UP",
   "nineHoleRoundSummary": {
     "numRounds": 0
   },
-  "numRounds": 7,
-  "penaltiesPerRound": 3.29,
+  "numRounds": 8,
+  "penaltiesPerRound": 3.13,
   "rankingByAll": {
     "approach": 60,
     "chip": 42,
-    "drive": 63,
+    "drive": 54,
     "driveDistance": 12
   },
   "rankingByConnections": {
@@ -27,26 +27,26 @@
   "rankingByGroup": {
     "approach": 67,
     "chip": 43,
-    "drive": 70,
+    "drive": 60,
     "driveDistance": 11
   },
-  "recoveriesPerRound": 3.14,
+  "recoveriesPerRound": 2.88,
   "roundStat": {
-    "percentFairwayHit": 56.96,
-    "percentFairwayLeft": 27.85,
-    "percentFairwayRight": 15.19,
-    "percentGir": 28.57,
-    "puttsPerHole": 2.28
+    "percentFairwayHit": 56.52,
+    "percentFairwayLeft": 27.17,
+    "percentFairwayRight": 16.3,
+    "percentGir": 27.74,
+    "puttsPerHole": 2.26
   },
   "simHandicapTrend": "UNKNOWN",
   "strokesGainedRatings": [
     {
       "groupRating": 3.59,
       "groupStrokesGained": -0.28,
-      "playerRating": 4.1,
-      "playerStrokesGained": -0.18,
+      "playerRating": 4.0,
+      "playerStrokesGained": -0.2,
       "statShotType": "DRIVE",
-      "trend": "UP"
+      "trend": "EVEN"
     },
     {
       "groupRating": 3.33,
@@ -73,18 +73,18 @@
     {
       "groupRating": 3.3,
       "groupStrokesGained": -0.34,
-      "playerRating": 3.7,
-      "playerStrokesGained": -0.26,
+      "playerRating": 3.2,
+      "playerStrokesGained": -0.36,
       "statShotType": "BUNKER",
-      "trend": "UP"
+      "trend": "DOWN"
     },
     {
       "groupRating": 3.83,
       "groupStrokesGained": -0.23,
-      "playerRating": 3.6,
-      "playerStrokesGained": -0.28,
+      "playerRating": 3.55,
+      "playerStrokesGained": -0.29,
       "statShotType": "RECOVERY",
-      "trend": "EVEN"
+      "trend": "DOWN"
     }
   ]
 }

@@ -615,7 +615,96 @@
       "scoreWithoutHandicap": 16,
       "startTime": "2026-11-09T16:02:07.000Z",
       "strokes": 74
+    },
+    {
+      "courseName": "McCleery Golf Course",
+      "endTime": "2026-11-22T00:20:03.000Z",
+      "handicappedStrokes": 77,
+      "holePars": "543434345454354344",
+      "holes": [
+        {
+          "number": 1,
+          "strokes": 6
+        },
+        {
+          "number": 2,
+          "strokes": 6
+        },
+        {
+          "number": 3,
+          "strokes": 5
+        },
+        {
+          "number": 4,
+          "strokes": 5
+        },
+        {
+          "number": 5,
+          "strokes": 6
+        },
+        {
+          "number": 6,
+          "strokes": 5
+        },
+        {
+          "number": 7,
+          "strokes": 4
+        },
+        {
+          "number": 8,
+          "strokes": 6
+        },
+        {
+          "number": 9,
+          "strokes": 7
+        },
+        {
+          "number": 10,
+          "strokes": 7
+        },
+        {
+          "number": 11,
+          "strokes": 8
+        },
+        {
+          "number": 12,
+          "strokes": 6
+        },
+        {
+          "number": 13,
+          "strokes": 2
+        },
+        {
+          "number": 14,
+          "strokes": 5
+        },
+        {
+          "number": 15,
+          "strokes": 6
+        },
+        {
+          "number": 16,
+          "strokes": 3
+        },
+        {
+          "number": 17,
+          "strokes": 6
+        },
+        {
+          "number": 18,
+          "strokes": 5
+        }
+      ],
+      "holesCompleted": 18,
+      "id": 392703289,
+      "roundInProgress": false,
+      "roundType": "ALL",
+      "scoreType": "STROKE_PLAY",
+      "scoreWithHandicap": 6,
+      "scoreWithoutHandicap": 27,
+      "startTime": "2026-11-21T19:34:24.000Z",
+      "strokes": 98
     }
   ],
-  "updated": "2026-11-09T22:18:30+00:00"
+  "updated": "2026-11-22T06:43:02+00:00"
 }
